@@ -1,3 +1,4 @@
+require('prototypes.creep');
 
 var roleUpgrader = {
     
@@ -12,6 +13,7 @@ var roleUpgrader = {
         });
 
         let sourcesTest = creep.findSources();
+        console.log(sourcesTest);
         
         
         

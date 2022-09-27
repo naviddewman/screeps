@@ -4,7 +4,6 @@ var roleHarvester = require('role.harvester');
 var roleHauler = require('role.hauler');
 var roleMiner = require('role.miner');
 var roleFixer = require('role.fixer');
-require('utils.utility');
 
 module.exports.loop = function() {
     
