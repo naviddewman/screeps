@@ -110,7 +110,7 @@ var createCreep = function(body, role) {
 }
 
 var createMiner = function(targetId) {
-    let body = [WORK,WORK,WORK,WORK,WORK,MOVE];
+    let body = [WORK,WORK,WORK,WORK,WORK,MOVE,MOVE];
     Game.spawns['Spawn1'].spawnCreep(body, 'miner' + Game.time, {
         memory: {
             role: 'miner',
