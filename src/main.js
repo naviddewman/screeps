@@ -32,7 +32,6 @@ module.exports.loop = function() {
         }
     }
     
-    
     if (upgraders.length < 2) {
         createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'upgrader');
     }
