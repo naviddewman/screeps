@@ -1,4 +1,3 @@
-require('prototypes.creep');
 
 var roleUpgrader = {
     
@@ -11,12 +10,7 @@ var roleUpgrader = {
                 structure.store.getUsedCapacity(RESOURCE_ENERGY) > 0);
             }
         });
-
-        let sourcesTest = creep.findSources();
-        console.log(sourcesTest);
-        
-        
-        
+     
         if ((creep.withdraw(containers[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) && creep.memory.dumper == false) {
             creep.moveTo(containers[0]);
         }
