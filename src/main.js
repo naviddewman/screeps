@@ -30,7 +30,7 @@ module.exports.loop = function() {
                 break;
             }
         }
-    }
+    } // test comment
     
     
     if (upgraders.length < 2) {
