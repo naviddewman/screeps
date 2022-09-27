@@ -4,7 +4,7 @@ var roleHarvester = require('role.harvester');
 var roleHauler = require('role.hauler');
 var roleMiner = require('role.miner');
 var roleFixer = require('role.fixer');
-var utils = require('utils.utility');
+require('utils.utility');
 
 module.exports.loop = function() {
     
@@ -32,6 +32,8 @@ module.exports.loop = function() {
             }
         }
     }
+
+    
     
     if (upgraders.length < 2) {
         createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'upgrader');
