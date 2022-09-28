@@ -2,7 +2,6 @@
 // Add ---> require('prototypes.creep') to modules that require these.
 require('constants');
 
-
 Creep.prototype.findSources = 
     function() {
         return this.room.find(FIND_SOURCES);
@@ -14,7 +13,7 @@ Creep.prototype.findContainers =
             filter: (structure) => { return (structure.structureType == STRUCTURE_CONTAINER); }
         });
         
-        if (status == 'full') {
+        if (status == FULL) {
             return _.filter(containers, (c) => c.store.getFreeCapacity() == 0 );
         }
         else if (status == 'empty') {
