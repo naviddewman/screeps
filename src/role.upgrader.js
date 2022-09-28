@@ -1,5 +1,4 @@
 require('prototypes.creep');
-// require('constants');
 
 var roleUpgrader = {
     
@@ -16,9 +15,6 @@ var roleUpgrader = {
         if ((creep.withdraw(containers[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) && creep.memory.dumper == false) {
             creep.moveTo(containers[0]);
         }
-        
-        // let c = creep.findContainers(FULL)
-        // console.log(c);
         
         if (creep.memory.dumper == false && creep.store.getFreeCapacity() == 0)
                 creep.memory.dumper = true;
