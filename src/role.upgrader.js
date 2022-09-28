@@ -1,4 +1,4 @@
-require('prototypes.creep');
+require('prototypes.creep.utils');
 
 var roleUpgrader = {
     
