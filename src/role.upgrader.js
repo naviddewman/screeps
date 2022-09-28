@@ -1,8 +1,6 @@
 require('prototypes.creep');
 //require('constants');
 
-const FULL = 'full';
-
 var roleUpgrader = {
     
     run: function(creep) {
@@ -19,8 +17,8 @@ var roleUpgrader = {
             creep.moveTo(containers[0]);
         }
         
-        // let c = creep.findContainers(FULL)
-        // console.log(c);
+        let c = creep.findContainers(FULL)
+        console.log(c);
         
         if (creep.memory.dumper == false && creep.store.getFreeCapacity() == 0)
                 creep.memory.dumper = true;
