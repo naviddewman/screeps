@@ -92,7 +92,7 @@ module.exports.loop = function() {
     
     for (var name in truckers) {
         var creep = truckers[name];
-        roleTruckers.run(creep);
+        roleTrucker.run(creep);
       }
   
     for (var name in fixers) {
