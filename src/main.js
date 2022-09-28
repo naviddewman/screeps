@@ -5,6 +5,7 @@ var roleHauler = require('role.hauler');
 var roleMiner = require('role.miner');
 var roleFixer = require('role.fixer');
 var roleColoniser = require('role.coloniser');
+var roleTrucker = require('role.trucker');
 
 module.exports.loop = function() {
     
