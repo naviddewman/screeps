@@ -2,7 +2,7 @@ require('prototypes.creep.energize');
 require('prototypes.creep.utils');
 
 
-var RoleTrucker = {
+var roleTrucker = {
 
     run: function(creep) {
         const container = Game.getObjectById('633118832f3c176d63204257');
