@@ -12,7 +12,7 @@ Creep.prototype.energize =
                     s.structureType == STRUCTURE_CONTAINTER) &&
                     s.getUsedCapacity(RESOURCE_ENERGY) > 0    
            }); 
-
+           console.log("in if");
            const closestStore = this.pos.findClosestByPath(energyStores);
 
            if (this.withdraw(closestStore) == ERR_NOT_IN_RANGE)
