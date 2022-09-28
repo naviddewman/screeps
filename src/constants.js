@@ -1,4 +1,4 @@
 
 // Storage
-FULL: 'full';
-EMPTY: 'empty';
+const FULL = 'full';
+const EMPTY = 'empty';
