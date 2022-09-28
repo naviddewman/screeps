@@ -15,6 +15,7 @@ module.exports.loop = function() {
     var miners =  filterRole('miner');
     var fixers = filterRole('fixer');
     var colonisers = filterRole('coloniser');
+    console.log(colonisers);
     
     const repairTargets = checkForRepairs(haulers[0]);
     const spawn = Game.spawns['Spawn1'];
