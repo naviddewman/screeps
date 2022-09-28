@@ -49,9 +49,9 @@ module.exports.loop = function() {
     //     createCreep([WORK,MOVE,MOVE,CARRY], 'harvester');
     // }
     
-    if (builders.length < 3) {
-        createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'builder');
-    }
+    // if (builders.length < 3) {
+    //     createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'builder');
+    // }
     
     
     if (repairTargets.length && fixers.length < 3) {
