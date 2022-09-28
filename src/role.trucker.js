@@ -8,8 +8,6 @@ var roleTrucker = {
         const container = Game.getObjectById('633118832f3c176d63204257');
         const storage = creep.findStorage();
         
-        console.log(creep.isFull());
-        
         if (!creep.isFull() && !creep.memory.dumper)
             creep.energize(container);
         
