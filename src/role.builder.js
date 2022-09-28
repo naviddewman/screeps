@@ -4,7 +4,7 @@ var roleBuilder = {
     run: function(creep) {
         const spawn = Game.spawns['Spawn1'];
         const targets = creep.room.find(FIND_CONSTRUCTION_SITES);
-        
+
         // Take from specific container.
         const container = Game.getObjectById('633118832f3c176d63204257');
         
