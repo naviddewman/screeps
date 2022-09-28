@@ -34,7 +34,7 @@ module.exports.loop = function() {
 
     
     if (colonisers.length < 1) {
-        createCreep([MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,CLAIM], 'coloniser');
+        createCreep([MOVE,MOVE,MOVE,MOVE,CLAIM], 'coloniser');
     }
     
     if (upgraders.length < 2) {
