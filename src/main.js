@@ -15,6 +15,7 @@ module.exports.loop = function() {
     var miners =  filterRole('miner');
     var fixers = filterRole('fixer');
     var colonisers = filterRole('coloniser');
+    var truckers = filterRole('trucker');
     
     const repairTargets = checkForRepairs(haulers[0]);
     const spawn = Game.spawns['Spawn1'];
@@ -37,6 +38,10 @@ module.exports.loop = function() {
     //     createCreep([MOVE,MOVE,MOVE,MOVE,CLAIM], 'coloniser');
     // }
     
+    if (truckers.length < 2) {
+        createCreep([CARRY,CARRY,CARRY,MOVE,MOVE], 'trucker');
+    }
+
     if (upgraders.length < 2) {
         createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'upgrader');
     }
@@ -85,9 +90,9 @@ module.exports.loop = function() {
         roleMiner.run(creep);
     }
     
-    for (var name in colonisers) {
-        var creep = colonisers[name];
-        roleColoniser.run(creep);
+    for (var name in truckers) {
+        var creep = truckers[name];
+        roleTruckers.run(creep);
       }
   
     for (var name in fixers) {

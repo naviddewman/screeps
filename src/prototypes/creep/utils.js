@@ -25,8 +25,28 @@ Creep.prototype.findContainers =
             return containers;
     };
 
-Creep.prototype.findConstruction = 
+Creep.prototype.findStorage = 
     function() {
-        // return all construction sites
+        return this.room.find(FIND_STRUCTURES, {
+            filter: (structure) => structure.structureType == STRUCTURE_STORAGE
+        });
+    }
+
+Creep.prototype.isFull = 
+    function() {
+        return (this.store.getFreeCapacity() == 0 ? true : false);
     };
+
+Creep.prototype.isEmpty = 
+    function() {
+        return (this.store.getUsedCapacity() == 0 ? true : false);
+    };
+
+
+
+
+    // Creep.prototype.findConstruction = 
+//     function() {
+//         // return all construction sites
+//     };
 
