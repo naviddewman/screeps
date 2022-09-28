@@ -1,4 +1,6 @@
 
 // Storage
-const FULL = 'full';
-const EMPTY = 'empty';
+Object.assign(exports, {
+    FULL: 'full',
+    EMPTY: 'empty'
+});

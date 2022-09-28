@@ -1,5 +1,5 @@
 require('prototypes.creep');
-//require('constants');
+require('constants');
 
 var roleUpgrader = {
     

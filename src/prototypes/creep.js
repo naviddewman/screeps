@@ -1,8 +1,6 @@
 // Commonly used functions are called from the prototype to increase readability.
 // Add ---> require('prototypes.creep') to modules that require these.
-//require('constants');
-
-const FULL = 'full';
+require('constants');
 
 Creep.prototype.findSources = 
     function() {
