@@ -1,3 +1,4 @@
+require('prototypes.creep');
 
 var roleUpgrader = {
     
