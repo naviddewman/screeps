@@ -16,7 +16,7 @@ Creep.prototype.energize =
                 this.moveTo(closestStore);
         }
         else {
-            console.log('else');
+            console.log(this.withdraw(store));
             if (this.withdraw(store) == ERR_NOT_IN_RANGE)
                 this.moveTo(store);
         }
