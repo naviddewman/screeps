@@ -1,6 +1,6 @@
 // Commonly used functions are called from the prototype to increase readability.
 // Add ---> require('prototypes.creep') to modules that require these.
-require('constants');
+require('constants.js');
 
 
 Creep.prototype.findSources = 
@@ -14,10 +14,10 @@ Creep.prototype.findContainers =
             filter: (structure) => { return (structure.structureType == STRUCTURE_CONTAINER); }
         });
         
-        if (status == FULL) {
+        if (status == 'full') {
             return _.filter(containers, (c) => c.store.getFreeCapacity() == 0 );
         }
-        else if (status == EMPTY) {
+        else if (status == 'empty') {
             return _.filter(containers, (c) => c.store.getUsedCapacity() == 0);
         }
         else    
