@@ -10,6 +10,8 @@ var roleColoniser = {
             //creep.moveTo(Game.flags.E43N28);
             const controller = creep.room.controller;
             
+            console.log(creep.claimController(controller));
+            
             if(creep.claimController(controller) == ERR_NOT_IN_RANGE)
                 creep.moveTo(controller);
         
