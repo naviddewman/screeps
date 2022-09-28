@@ -5,19 +5,19 @@ Creep.prototype.energize =
         
         // if there is no targeted energy store, fetch from nearest store.
         if(!store) {
-           const energyStores = creep.room.find(FIND_STRUCTURES, {
+           const energyStores = this.room.find(FIND_STRUCTURES, {
                 filter: (s) => (s.structureType == STRUCTURE_STORAGE ||
                     s.structureType == STRUCTURE_CONTAINTER) &&
                     s.getUsedCapacity(RESOURCE_ENERGY) > 0    
            }); 
 
-           const closestStore = creep.pos.findClosestByPath(energyStores);
+           const closestStore = this.pos.findClosestByPath(energyStores);
 
-           if (creep.withdraw(closestStore) == ERR_NOT_IN_RANGE)
-                creep.moveTo(closestStore);
+           if (this.withdraw(closestStore) == ERR_NOT_IN_RANGE)
+                this.moveTo(closestStore);
         }
         else {
-            if (creep.withdraw(store) == ERR_NOT_IN_RANGE)
-                creep.moveTo(store);
+            if (this.withdraw(store) == ERR_NOT_IN_RANGE)
+                this.moveTo(store);
         }
     };
