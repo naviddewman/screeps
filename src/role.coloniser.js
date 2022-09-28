@@ -6,14 +6,13 @@ var roleColoniser = {
         const exit = creep.room.find(FIND_EXIT_BOTTOM);
         const homeRoom = 'E43N29';
 
-        if (creep.room.name == homeRoom)   
+        
             creep.moveTo(Game.flags.E43N28);
-        else {
             const controller = creep.room.controller;
             
-            if(creep.claimController(controller) == ERR_NOT_IN_RANGE)
-                creep.moveTo(controller);
-        }
+            // if(creep.claimController(controller) == ERR_NOT_IN_RANGE)
+            //     creep.moveTo(controller);
+        
 
     }
 };
