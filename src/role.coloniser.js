@@ -7,7 +7,7 @@ var roleColoniser = {
         const homeRoom = 'E43N29';
 
         if (creep.room.name == homeRoom)   
-            creep.moveTo(exit[0]);
+            creep.moveTo(Game.flags.E43N28);
         else {
             const controller = creep.room.controller;
             
