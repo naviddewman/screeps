@@ -4,6 +4,7 @@ var roleHarvester = require('role.harvester');
 var roleHauler = require('role.hauler');
 var roleMiner = require('role.miner');
 var roleFixer = require('role.fixer');
+var roleColoniser = require('role.coloniser');
 
 module.exports.loop = function() {
     
@@ -13,8 +14,7 @@ module.exports.loop = function() {
     var haulers = filterRole('hauler');
     var miners =  filterRole('miner');
     var fixers = filterRole('fixer');
-    var creepsInRoom = Game.creeps;
-    //console.log(miners);
+    var colonisers = filterRole('coloniser');
     
     const repairTargets = checkForRepairs(haulers[0]);
     const spawn = Game.spawns['Spawn1'];
@@ -72,17 +72,22 @@ module.exports.loop = function() {
     }
    
    
-   for (var name in haulers) {
-       var creep = haulers[name];
-       roleHauler.run(creep);
+    for (var name in haulers) {
+        var creep = haulers[name];
+        roleHauler.run(creep);
     }
    
-  for (var name in miners) {
-      var creep = miners[name];
-      roleMiner.run(creep);
+    for (var name in miners) {
+        var creep = miners[name];
+        roleMiner.run(creep);
     }
+    
+    for (var name in colonisers) {
+        var creep = colonisers[name];
+        roleColoniser.run(creep);
+      }
   
-  for (var name in fixers) {
+    for (var name in fixers) {
         var creep = fixers[name];
             if (repairTargets.length ==  0)
                 creep.memory.recycle = true;   
