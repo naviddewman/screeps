@@ -1,6 +1,6 @@
 
 // Storage
-Object.assign(exports, {
-    FULL: 'full',
-    EMPTY: 'empty'
-});
+// Object.assign(exports, {
+//     FULL: 'full',
+//     EMPTY: 'empty'
+// });
