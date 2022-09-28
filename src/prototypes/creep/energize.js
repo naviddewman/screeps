@@ -3,6 +3,8 @@ require('prototypes.creep.utils');
 Creep.prototype.energize = 
     function(store = false) {
         
+        console.log(store);
+        
         // if there is no targeted energy store, fetch from nearest store.
         if(!store) {
            const energyStores = this.room.find(FIND_STRUCTURES, {
