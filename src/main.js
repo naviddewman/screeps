@@ -46,7 +46,7 @@ module.exports.loop = function() {
     }
 
     if (repairTargets.length && fixers.length < 3) {
-        createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'fixer');
+        createCreep([WORK,WORK,WORK,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY], 'fixer');
     }
     
     if (truckers.length < 1) {
