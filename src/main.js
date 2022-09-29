@@ -34,12 +34,12 @@ module.exports.loop = function() {
     }
     
     if (haulers.length < 2) {
-        createCreep([MOVE,MOVE,CARRY,CARRY,CARRY], 'hauler');
+        createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY,CARRY], 'hauler');
     }
     
-    // if (upgraders.length < 2) {
-    //     createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE], 'upgrader');
-    // }
+    if (upgraders.length < 2) {
+        createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE], 'upgrader');
+    }
 
     // if (fixers.length < 3) {
     //     createCreep([WORK,WORK,WORK,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY], 'fixer');
@@ -60,11 +60,6 @@ module.exports.loop = function() {
     // if (harvesters.length < 1) {
     //     createCreep([WORK,MOVE,MOVE,CARRY], 'harvester');
     // }
-    
-    
-    
-    
-    
   
     for (var name in upgraders) {
         var creep = upgraders[name];
