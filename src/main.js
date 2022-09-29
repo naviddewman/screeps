@@ -18,6 +18,7 @@ module.exports.loop = function() {
     var fixers = filterRole('fixer');
     var colonisers = filterRole('coloniser');
     var truckers = filterRole('trucker');
+    var couriers = filterRole('courier');
     
     const spawn = Game.spawns['Spawn1'];
     
