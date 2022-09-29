@@ -45,13 +45,13 @@ module.exports.loop = function() {
         createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'upgrader');
     }
 
-    // if (repairTargets.length && fixers.length < 3) {
-    //     createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'fixer');
-    // }
+    if (repairTargets.length && fixers.length < 3) {
+        createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'fixer');
+    }
     
-    // if (truckers.length < 2) {
-    //     createCreep([CARRY,CARRY,CARRY,MOVE,MOVE], 'trucker');
-    // }
+    if (truckers.length < 2) {
+        createCreep([CARRY,CARRY,CARRY,MOVE,MOVE], 'trucker');
+    }
 
     // if (builders.length < 3) {
     //     createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'builder');
