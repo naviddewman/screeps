@@ -43,9 +43,9 @@ module.exports.loop = function() {
     //     createCreep([CARRY,CARRY,CARRY,MOVE,MOVE], 'trucker');
     // }
 
-    if (upgraders.length < 2) {
-        createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'upgrader');
-    }
+    // if (upgraders.length < 2) {
+    //     createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'upgrader');
+    // }
     
     // if (haulers.length < 3) {
     //     createCreep([WORK,MOVE,MOVE,CARRY,CARRY, CARRY], 'hauler');
