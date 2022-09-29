@@ -42,7 +42,7 @@ module.exports.loop = function() {
     }
     
     if (upgraders.length < 1) {
-        createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'upgrader');
+        createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE], 'upgrader');
     }
 
     if (repairTargets.length && fixers.length < 3) {
