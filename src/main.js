@@ -94,10 +94,7 @@ module.exports.loop = function() {
   
     for (var name in fixers) {
         var creep = fixers[name];
-            if (repairTargets.length ==  0)
-                creep.memory.recycle = true;   
-        
-      roleFixer.run(creep, repairTargets);
+        roleFixer.run(creep);
     }
   
     
