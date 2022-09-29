@@ -49,7 +49,7 @@ module.exports.loop = function() {
         createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'fixer');
     }
     
-    if (truckers.length < 2) {
+    if (truckers.length < 1) {
         createCreep([CARRY,CARRY,CARRY,MOVE,MOVE], 'trucker');
     }
 
