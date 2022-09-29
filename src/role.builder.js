@@ -6,7 +6,7 @@ var roleBuilder = {
         const targets = creep.room.find(FIND_CONSTRUCTION_SITES);
 
         // Take from specific container.
-        const container = Game.getObjectById('633118832f3c176d63204257');
+        const container = Game.getObjectById('63340f12ac9df436b4f8618d');
         
         if ((creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) && creep.memory.dumper == false) {
             creep.moveTo(container);
