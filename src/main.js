@@ -47,7 +47,7 @@ module.exports.loop = function() {
     //     createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE], 'upgrader');
     // }
 
-    // if (repairTargets.length && fixers.length < 3) {
+    // if (fixers.length < 3) {
     //     createCreep([WORK,WORK,WORK,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY], 'fixer');
     // }
     
@@ -141,16 +141,6 @@ var createMiner = function(targetId) {
         memory: {
             role: 'miner',
             targetId: targetId
-        }
-    });
-}
-
-var checkForRepairs = function(creep) {
-    return creep.room.find(FIND_STRUCTURES, {
-        filter: (structure) => {
-            return ((structure.structureType == STRUCTURE_CONTAINER ||
-            structure.structureType == STRUCTURE_ROAD) &&
-            structure.hits < structure.hitsMax);
         }
     });
 }

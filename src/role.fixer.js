@@ -1,16 +1,9 @@
 
 var roleFixer = {
     
-    run: function(creep, targets) {
+    run: function(creep) {
         
-        const spawn = Game.spawns['Spawn1'];
-        // const containers = creep.room.find(FIND_STRUCTURES, {
-        //     filter: (structure) => {
-        //         return (structure.structureType == STRUCTURE_CONTAINER &&
-        //         structure.store.getUsedCapacity(RESOURCE_ENERGY) > 0);
-        //     }
-        // });
-
+        const targets = checkForRepairs(creep);
         const storage = Game.getObjectById('63340f12ac9df436b4f8618d');
         
         
@@ -29,5 +22,23 @@ var roleFixer = {
             creep.memory.dumper = false;
     }
 };
+
+var checkForRepairs = function(creep) {
+    return creep.room.find(FIND_STRUCTURES, {
+        filter: (structure) => {
+            return ((structure.structureType == STRUCTURE_CONTAINER ||
+            structure.structureType == STRUCTURE_ROAD) &&
+            structure.hits < structure.hitsMax);
+        }
+    });
+}
+
+
+
+
+
+
+
+
 
 module.exports = roleFixer;
