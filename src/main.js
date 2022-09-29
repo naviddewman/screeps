@@ -6,7 +6,6 @@ var roleMiner = require('role.miner');
 var roleFixer = require('role.fixer');
 var roleColoniser = require('role.coloniser');
 var roleTrucker = require('role.trucker');
-var roleCourier = require('role.courier');
 
 module.exports.loop = function() {
     
@@ -18,7 +17,6 @@ module.exports.loop = function() {
     var fixers = filterRole('fixer');
     var colonisers = filterRole('coloniser');
     var truckers = filterRole('trucker');
-    var couriers = filterRole('courier');
     
     const spawn = Game.spawns['Spawn1'];
     
@@ -34,10 +32,6 @@ module.exports.loop = function() {
             }
         }
     }
-
-    // if (couriers.length < 2) {
-    //     createCreep([CARRY,MOVE,MOVE], 'courier');
-    // }
     
     if (haulers.length < 2) {
         createCreep([MOVE,MOVE,CARRY,CARRY,CARRY], 'hauler');
@@ -71,10 +65,6 @@ module.exports.loop = function() {
     
     
     
-    for (var name in couriers) {
-        var creep = couriers[name];
-        roleCourier.run(creep);
-    }
   
     for (var name in upgraders) {
         var creep = upgraders[name];
