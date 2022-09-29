@@ -51,7 +51,7 @@ module.exports.loop = function() {
     //     createCreep([WORK,MOVE,MOVE,CARRY,CARRY, CARRY], 'hauler');
     // }
     
-    if (harvesters.length < 3) {
+    if (harvesters.length < 1) {
         createCreep([WORK,MOVE,MOVE,CARRY], 'harvester');
     }
     
