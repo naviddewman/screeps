@@ -10,22 +10,10 @@ var roleHarvester = {
         var spawn = Game.spawns['Spawn1'];
         
         
-        if(!creep.isFull() && !creep.memory.dumper) {
-            if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(sources[0]);
-            }
-        }
+        if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE)
+            creep.moveTo(sources[0]);
         
-        else if (creep.isFull)
-            creep.memory.dumper = true;
-
-        if (creep.memory.dumper) {
-            if(creep.transfer(spawn, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE)
-                creep.moveTo(spawn)
-    
-            if (creep.isEmpty())
-                creep.memory.dumper = false;
-        }
+        creep.drop(RESOURCE_ENERGY);
         
         // if(creep.memory.dumper == false && creep.store.getFreeCapacity() > 0) {
         //         creep.moveTo(sources[0]);
