@@ -19,8 +19,8 @@ module.exports.loop = function() {
     var truckers = filterRole('trucker');
     
     // const repairTargets = checkForRepairs(haulers[0]);
-    // if (haulers.length > 0)
-    //     var repairTargets = checkForRepairs(haulers[0]);
+    if (haulers.length > 0)
+        var repairTargets = checkForRepairs(haulers[0]);
     
     const spawn = Game.spawns['Spawn1'];
     
