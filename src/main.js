@@ -19,6 +19,9 @@ module.exports.loop = function() {
     var truckers = filterRole('trucker');
     
     // const repairTargets = checkForRepairs(haulers[0]);
+    // if (haulers.length > 0)
+    //     var repairTargets = checkForRepairs(haulers[0]);
+    
     const spawn = Game.spawns['Spawn1'];
     
     const sources = spawn.room.find(FIND_SOURCES);
@@ -58,9 +61,9 @@ module.exports.loop = function() {
     //     createCreep([MOVE,MOVE,MOVE,MOVE,CLAIM], 'coloniser');
     // }
 
-    if (harvesters.length < 1) {
-        createCreep([WORK,MOVE,MOVE,CARRY], 'harvester');
-    }
+    // if (harvesters.length < 1) {
+    //     createCreep([WORK,MOVE,MOVE,CARRY], 'harvester');
+    // }
     
     
     
