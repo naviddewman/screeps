@@ -35,13 +35,13 @@ module.exports.loop = function() {
         }
     }
 
-    if (couriers.length < 2) {
-        createCreep([CARRY,MOVE,MOVE], 'courier');
-    }
-    
-    // if (haulers.length < 2) {
-    //     createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY,CARRY], 'hauler');
+    // if (couriers.length < 2) {
+    //     createCreep([CARRY,MOVE,MOVE], 'courier');
     // }
+    
+    if (haulers.length < 2) {
+        createCreep([MOVE,MOVE,CARRY,CARRY,CARRY], 'hauler');
+    }
     
     // if (upgraders.length < 2) {
     //     createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE], 'upgrader');
