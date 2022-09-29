@@ -34,35 +34,36 @@ module.exports.loop = function() {
         }
     }
 
+    if (haulers.length < 3) {
+        createCreep([WORK,MOVE,MOVE,CARRY,CARRY, CARRY], 'hauler');
+    }
     
-    // if (colonisers.length < 1) {
-    //     createCreep([MOVE,MOVE,MOVE,MOVE,CLAIM], 'coloniser');
+    // if (upgraders.length < 2) {
+    //     createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'upgrader');
+    // }
+
+    // if (repairTargets.length && fixers.length < 3) {
+    //     createCreep([WORK,WORK,MOVE,MOVE,CARRY], 'fixer');
     // }
     
     // if (truckers.length < 2) {
     //     createCreep([CARRY,CARRY,CARRY,MOVE,MOVE], 'trucker');
     // }
 
-    // if (upgraders.length < 2) {
-    //     createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'upgrader');
+    // if (builders.length < 3) {
+    //     createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'builder');
     // }
-    
-    // if (haulers.length < 3) {
-    //     createCreep([WORK,MOVE,MOVE,CARRY,CARRY, CARRY], 'hauler');
+
+    // if (colonisers.length < 1) {
+    //     createCreep([MOVE,MOVE,MOVE,MOVE,CLAIM], 'coloniser');
     // }
-    
+
     if (harvesters.length < 1) {
         createCreep([WORK,MOVE,MOVE,CARRY], 'harvester');
     }
     
-    // if (builders.length < 3) {
-    //     createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'builder');
-    // }
     
     
-    // if (repairTargets.length && fixers.length < 3) {
-    //     createCreep([WORK,WORK,MOVE,MOVE,CARRY], 'fixer');
-    // }
     
     
     for (var name in upgraders) {
