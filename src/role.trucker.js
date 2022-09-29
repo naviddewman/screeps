@@ -16,7 +16,7 @@ var roleTrucker = {
         
         if (creep.memory.dumper) {
             if(creep.transfer(storage[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE)
-                creep.moveTo(storage[0])
+                creep.moveTo(storage[0]);
 
             if (creep.isEmpty())
                 creep.memory.dumper = false;
