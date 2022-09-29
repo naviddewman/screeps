@@ -39,21 +39,21 @@ module.exports.loop = function() {
     //     createCreep([MOVE,MOVE,MOVE,MOVE,CLAIM], 'coloniser');
     // }
     
-    if (truckers.length < 2) {
-        createCreep([CARRY,CARRY,CARRY,MOVE,MOVE], 'trucker');
-    }
+    // if (truckers.length < 2) {
+    //     createCreep([CARRY,CARRY,CARRY,MOVE,MOVE], 'trucker');
+    // }
 
     if (upgraders.length < 2) {
         createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'upgrader');
     }
     
-    if (haulers.length < 3) {
-        createCreep([WORK,MOVE,MOVE,CARRY,CARRY, CARRY], 'hauler');
-    }
-    
-    // if (harvesters.length < 1) {
-    //     createCreep([WORK,MOVE,MOVE,CARRY], 'harvester');
+    // if (haulers.length < 3) {
+    //     createCreep([WORK,MOVE,MOVE,CARRY,CARRY, CARRY], 'hauler');
     // }
+    
+    if (harvesters.length < 1) {
+        createCreep([WORK,MOVE,MOVE,CARRY], 'harvester');
+    }
     
     // if (builders.length < 3) {
     //     createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'builder');
