@@ -18,8 +18,8 @@ module.exports.loop = function() {
     var colonisers = filterRole('coloniser');
     var truckers = filterRole('trucker');
     
-    const repairTargets = checkForRepairs(haulers[0]);
-    const spawn = Game.spawns['Spawn1'];
+    // const repairTargets = checkForRepairs(haulers[0]);
+    // const spawn = Game.spawns['Spawn1'];
     
     const sources = spawn.room.find(FIND_SOURCES);
     for (let source of sources) {
@@ -60,9 +60,9 @@ module.exports.loop = function() {
     // }
     
     
-    if (repairTargets.length && fixers.length < 3) {
-        createCreep([WORK,WORK,MOVE,MOVE,CARRY], 'fixer');
-    }
+    // if (repairTargets.length && fixers.length < 3) {
+    //     createCreep([WORK,WORK,MOVE,MOVE,CARRY], 'fixer');
+    // }
     
     
     for (var name in upgraders) {
