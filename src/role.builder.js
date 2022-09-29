@@ -17,7 +17,7 @@ var roleBuilder = {
             creep.memory.dumper = true;
             
         
-        if (targets.length && creep.memory.dumper) {
+        if (creep.memory.dumper) {
             if (targets.length > 0) {
                 if (creep.build(targets[0]) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(targets[0]);
