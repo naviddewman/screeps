@@ -38,15 +38,15 @@ module.exports.loop = function() {
     }
 
     if (haulers.length < 3) {
-        createCreep([WORK,MOVE,MOVE,CARRY,CARRY, CARRY], 'hauler');
+        createCreep([WORK,MOVE,MOVE,CARRY,CARRY,CARRY], 'hauler');
     }
     
-    // if (upgraders.length < 2) {
-    //     createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'upgrader');
-    // }
+    if (upgraders.length < 2) {
+        createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'upgrader');
+    }
 
     // if (repairTargets.length && fixers.length < 3) {
-    //     createCreep([WORK,WORK,MOVE,MOVE,CARRY], 'fixer');
+    //     createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'fixer');
     // }
     
     // if (truckers.length < 2) {
