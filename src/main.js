@@ -19,7 +19,7 @@ module.exports.loop = function() {
     var truckers = filterRole('trucker');
     
     // const repairTargets = checkForRepairs(haulers[0]);
-    // const spawn = Game.spawns['Spawn1'];
+    const spawn = Game.spawns['Spawn1'];
     
     const sources = spawn.room.find(FIND_SOURCES);
     for (let source of sources) {
