@@ -8,6 +8,12 @@ var roleHarvester = {
         var sources = creep.room.find(FIND_SOURCES);
         var controller = creep.room.controller;
         var spawn = Game.spawns['Spawn1'];
+        const extenders = creep.room.find(FIND_MY_STRUCTURES, {
+            filter: (structure) => {
+                return (structure.structureType == STRUCTURE_EXTENSION) &&
+                (structure.store.getFreeCapacity(RESOURCE_ENERGY) > 0);
+            }
+        });
         
         if (!creep.isFull() && !creep.memory.dumper) {
             if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE)
