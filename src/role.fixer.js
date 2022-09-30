@@ -4,6 +4,7 @@ var roleFixer = {
     run: function(creep) {
         
         const targets = checkForRepairs(creep);
+        const lowestTarget = findLowestTarget(targets);
         const storage = Game.getObjectById('63340f12ac9df436b4f8618d');
         
         
@@ -14,8 +15,8 @@ var roleFixer = {
                 creep.memory.dumper = true;
             
         if (creep.memory.dumper) {
-            if (creep.repair(targets[0]) == ERR_NOT_IN_RANGE)
-                creep.moveTo(targets[0]);
+            if (creep.repair(lowestTarget) == ERR_NOT_IN_RANGE)
+                creep.moveTo(lowestTarget);
         }
             
         if (creep.store.getUsedCapacity() == 0)
@@ -33,15 +34,18 @@ var checkForRepairs = function(creep) {
     });
 }
 
-// var findLowestTarget = function(targets) {
-//     let lowest = 1000000000;
-//     let lowestTarget = {};
-//     for (let target in targets) {
-//         let num = target.hitsMax - target.hits;
-//         if ( < lowest)
-
-//     }
-// }
+var findLowestTarget = function(targets) {
+    let lowest = 1000000000;
+    let lowestTarget = {};
+    for (let target in targets) {
+        let hitsLeft = target.hitsMax - target.hits;
+        if (hitsLeft < lowest) {
+            lowest = hitsLeft;
+            lowestTarget = target;
+        }
+    }
+    return lowestTarget;
+}
 
 
 
