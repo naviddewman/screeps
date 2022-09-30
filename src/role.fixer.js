@@ -40,10 +40,11 @@ var findLowestTarget = function(targets) {
     let lowestTarget;
     for (let target in targets) {
         let hitsLeft = target.hitsMax - target.hits;
+        console.log(hitsLeft);
         if (hitsLeft < lowest) {
             lowest = hitsLeft;
             lowestTarget = target;
-            console.log(lowestTarget);
+            
         }
     }
     return lowestTarget;
