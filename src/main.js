@@ -8,6 +8,7 @@ var roleFixer = require('role.fixer');
 var roleColoniser = require('role.coloniser');
 var roleTrucker = require('role.trucker');
 var roleCombatEngineer = require('role.combatEngineer');
+var roleScavenger = require('role.scavenger');
 
 module.exports.loop = function() {
     
@@ -19,7 +20,8 @@ module.exports.loop = function() {
     var fixers = filterRole('fixer');
     var colonisers = filterRole('coloniser');
     var truckers = filterRole('trucker');
-    var combatEngineers = filterRole ('combatEngineer')
+    var combatEngineers = filterRole ('combatEngineer');
+    var scavengers = filterRole ('scavenger');
     
     const spawn = Game.spawns['Spawn1'];
     
@@ -70,6 +72,10 @@ module.exports.loop = function() {
         }
     }
 
+    if (roleScavenger.length < 1) {
+        createCreep([WORK,WORK,WORK,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY], 'scavenger');
+    }
+
     
     
   
@@ -112,6 +118,11 @@ module.exports.loop = function() {
     for (var name in combatEngineers) {
         var creep = combatEngineers[name];
         roleCombatEngineer.run(creep);
+    }
+
+    for (var name in scavengers) {
+        var creep = scavengers[name];
+        roleScavenger.run(creep);
     }
 
     const tower = Game.getObjectById('633695b0521c81d44934dc18');
