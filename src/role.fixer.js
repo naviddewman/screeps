@@ -37,7 +37,7 @@ var checkForRepairs = function(creep) {
 
 var findLowestTarget = function(targets) {
     let lowest = 1000000000;
-    let lowestTarget = {};
+    let lowestTarget;
     for (let target in targets) {
         let hitsLeft = target.hitsMax - target.hits;
         if (hitsLeft < lowest) {
