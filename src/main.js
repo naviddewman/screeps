@@ -33,9 +33,9 @@ module.exports.loop = function() {
         }
     }
     
-    // if (haulers.length < 2) {
-    //     createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY,CARRY], 'hauler');
-    // }
+    if (haulers.length < 2) {
+        createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY,CARRY], 'hauler');
+    }
     
     // if (upgraders.length < 1) {
     //     createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE], 'upgrader');
@@ -57,9 +57,9 @@ module.exports.loop = function() {
     //     createCreep([MOVE,MOVE,MOVE,MOVE,CLAIM], 'coloniser');
     // }
 
-    if (harvesters.length < 3) {
-        createCreep([WORK,MOVE,MOVE,CARRY], 'harvester');
-    }
+    // if (harvesters.length < 3) {
+    //     createCreep([WORK,MOVE,MOVE,CARRY], 'harvester');
+    // }
   
     for (var name in upgraders) {
         var creep = upgraders[name];
