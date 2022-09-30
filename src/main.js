@@ -73,7 +73,7 @@ module.exports.loop = function() {
     }
 
     if (roleScavenger.length < 1) {
-        createCreep([WORK,WORK,WORK,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY], 'scavenger');
+        createCreep([WORK,WORK,WORK,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY], 'scavenger');
     }
 
     
