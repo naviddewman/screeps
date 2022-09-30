@@ -1,52 +1,38 @@
+require('prototypes.creep.utils');
 
 var roleFixer = {
     
     run: function(creep) {
         
-        const targets = checkForRepairs(creep);
-        const lowestTarget = findLowestTarget(targets);
+        const controller = creep.room.controller;
+        const targets = creep.room.find(FIND_STRUCTURES, {
+            filter: (s) => s.hits < s.hitsMax
+        });
+        targets.sort((a,b) => a.hits - b.hits);
         
         const storage = Game.getObjectById('63340f12ac9df436b4f8618d');
-        
-        
-        if ((creep.withdraw(storage, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) && creep.memory.dumper == false)
-            creep.moveTo(storage);
-            
-        if (creep.memory.dumper == false && creep.store.getFreeCapacity() == 0)
-                creep.memory.dumper = true;
-            
-        if (creep.memory.dumper) {
-            if (creep.repair(lowestTarget) == ERR_NOT_IN_RANGE)
-                creep.moveTo(lowestTarget);
+
+        if (!creep.isFull() && !creep.memory.dumper) {
+            creep.energize(storage);
         }
-            
-        if (creep.store.getUsedCapacity() == 0)
+        else if (creep.isFull())
+            creep.memory.dumper = true;
+        
+        if (targets.length > 0 && creep.memory.dumper) {
+            if (creep.memory.dumper) {
+                if(creep.repair(targets[0]) == ERR_NOT_IN_RANGE)
+                    creep.moveTo(targets[0]);
+            }
+        }
+        else if (creep.memory.dumper) {
+            if (creep.upgradeController(controller) == ERR_NOT_IN_RANGE)
+                creep.moveTo(controller);
+        }
+
+        if(creep.isEmpty())
             creep.memory.dumper = false;
-    }
+    }    
 };
 
-var checkForRepairs = function(creep) {
-    return creep.room.find(FIND_STRUCTURES, {
-        filter: (structure) => {
-            return ((structure.structureType == STRUCTURE_CONTAINER ||
-            structure.structureType == STRUCTURE_ROAD) &&
-            structure.hits < structure.hitsMax);
-        }
-    });
-}
-
-var findLowestTarget = function(targets) {
-    let lowest = 1000000000;
-    let lowestTarget;
-    for (let target of targets) {
-        let hitsLeft = target.hitsMax - target.hits;
-        if (hitsLeft < lowest) {
-            lowest = hitsLeft;
-            lowestTarget = target;
-            
-        }
-    }
-    return lowestTarget;
-}
 
 module.exports = roleFixer;
