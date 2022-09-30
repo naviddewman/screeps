@@ -37,11 +37,11 @@ module.exports.loop = function() {
     }
     
     if (haulers.length < 2) {
-        createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY,CARRY], 'hauler');
+        createCreep([WORK,WORK,MOVE,MOVE,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY], 'hauler');
     }
     
     if (upgraders.length < 1) {
-        createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE], 'upgrader');
+        createCreep([WORK,WORK,WORK,WORK,CARRY,CARRY,MOVE,MOVE,MOVE,MOVE,MOVE], 'upgrader');
     }
 
     if (fixers.length < 3) {
@@ -53,7 +53,7 @@ module.exports.loop = function() {
     }
 
     if (builders.length < 3) {
-        createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'builder');
+        createCreep([WORK,WORK,MOVE,MOVE,MOVE,MOVE,CARRY,CARRY], 'builder');
     }
 
     if (combatEngineers.length < 1) {
