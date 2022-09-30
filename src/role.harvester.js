@@ -9,11 +9,32 @@ var roleHarvester = {
         var controller = creep.room.controller;
         var spawn = Game.spawns['Spawn1'];
         
+        if (!creep.isFull() && !creep.memory.dumper) {
+            if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE)
+                creep.moveTo(sources[0]);
+        }
+
+        if(creep.isFull())
+            creep.memory.dumper = true;
         
-        if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE)
-            creep.moveTo(sources[0]);
+        if (creep.memory.dumper && spawn.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
+            if(creep.transfer(spawn, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE)
+                creep.moveTo(spawn);
+        }
+
+        if (creep.memory.dumper && extenders.length && spawn.store.getFreeCapacity(RESOURCE_ENERGY) == 0) {
+            for (object in extenders) {
+                if (creep.transfer(extenders[object], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE)
+                    creep.moveTo(extenders[object]);
+            }
+        }
+      
+        if (creep.store.getUsedCapacity() == 0)
+            creep.memory.dumper = false;
         
-        creep.drop(RESOURCE_ENERGY);
+        // if there is no space in the extenders, upgrade controller
+        if (extenders.length == false && spawn.store.getFreeCapacity(RESOURCE_ENERGY) == 0)
+            roleUpgrader.run(creep);
         
         // if(creep.memory.dumper == false && creep.store.getFreeCapacity() > 0) {
         //         creep.moveTo(sources[0]);
