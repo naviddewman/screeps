@@ -31,7 +31,7 @@ var roleCombatEngineer = {
             
             if (creep.memory.dumper) {
                 // maintain tower
-                if (tower.store.getFreeCapacity(RESOURCE_ENERGY > 0)) {
+                if (tower.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
                     if (creep.transfer(tower, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE)
                         creep.moveTo(tower);
                 }
