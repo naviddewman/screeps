@@ -9,6 +9,7 @@ var roleScavenger = {
         const storage = Game.getObjectById('63340f12ac9df436b4f8618d');
 
         if (!creep.isFull() && !creep.memory.dumper) {
+            console.log(source);
             if(creep.harvest(source) == ERR_NOT_IN_RANGE)
                 creep.moveTo(source);
         }
