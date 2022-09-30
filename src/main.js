@@ -6,6 +6,7 @@ var roleMiner = require('role.miner');
 var roleFixer = require('role.fixer');
 var roleColoniser = require('role.coloniser');
 var roleTrucker = require('role.trucker');
+var roleCombatEngineer = require('role.combatEngineer');
 
 module.exports.loop = function() {
     
@@ -17,6 +18,7 @@ module.exports.loop = function() {
     var fixers = filterRole('fixer');
     var colonisers = filterRole('coloniser');
     var truckers = filterRole('trucker');
+    var combatEngineers = filterRole ('combatEngineer')
     
     const spawn = Game.spawns['Spawn1'];
     
@@ -51,6 +53,10 @@ module.exports.loop = function() {
 
     if (builders.length < 3) {
         createCreep([WORK,WORK,MOVE,MOVE,CARRY,CARRY], 'builder');
+    }
+
+    if (combatEngineers.length < 1) {
+        createCreep([WORK,WORK,WORK,MOVE,MOVE,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY,CARRY,ATTACK,ATTACK,ATTACK,TOUGH,TOUGH,TOUGH,TOUGH], 'combatEngineer');
     }
 
     // if (colonisers.length < 1) {
@@ -96,6 +102,11 @@ module.exports.loop = function() {
         var creep = fixers[name];
         roleFixer.run(creep);
     }
+
+    for (var name in combatEngineers) {
+        var creep = combatEngineers[name];
+        roleCombatEngineer.run(creep);
+    }
   
     
 }
@@ -112,7 +123,8 @@ var createCreep = function(body, role) {
             repairing: false,
             shutdown: false,
             recycle: false,
-            pickUp: false
+            pickUp: false,
+            attack: false
         }
     });
 }
