@@ -72,7 +72,7 @@ module.exports.loop = function() {
         }
     }
 
-    if (scavengers.length < 1) {
+    if (scavengers.length < 2) {
         createCreep([WORK,WORK,WORK,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY], 'scavenger');
     }
 
