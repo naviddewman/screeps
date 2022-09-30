@@ -33,6 +33,13 @@ var checkForRepairs = function(creep) {
     });
 }
 
+var findLowestTarget = function(targets) {
+    let lowest = {};
+    for (let target in targets) {
+        
+    }
+}
+
 
 
 
