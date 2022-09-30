@@ -3,6 +3,7 @@ var roleCombatEngineer = {
 
     run: function(creep) {
         
+        const controller = creep.room.controller;
         const storage = Game.getObjectById('63340f12ac9df436b4f8618d');
         const tower = Game.getObjectById('633695b0521c81d44934dc18');
         const walls = creep.room.find(FIND_STRUCTURES, {
@@ -39,6 +40,10 @@ var roleCombatEngineer = {
                 else if (walls.length > 0) {
                     if (creep.repair(walls[0]) == ERR_NOT_IN_RANGE)
                         creep.moveTo(walls[0]);
+                }
+                else {
+                    if(creep.upgradeController(controller) ==  ERR_NOT_IN_RANGE)
+                        creep.moveTo(controller);
                 }
             }
 
