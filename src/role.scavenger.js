@@ -3,7 +3,7 @@ require('prototypes.creep.utils');
 var roleScavenger = {
 
     run: function(creep) {
-        const homeRoom = 'EN43N29';
+        const homeRoom = 'E43N29';
         const targetRoom = 'EN43N28';
         const source = Game.getObjectById('5bbcaf829099fc012e63ab04');
         const storage = Game.getObjectById('63340f12ac9df436b4f8618d');
