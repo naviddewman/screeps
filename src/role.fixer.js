@@ -21,7 +21,7 @@ var roleFixer = {
         if (targets.length > 0 && creep.memory.dumper) {
             if (creep.memory.dumper) {
                 if(creep.repair(targets[0]) == ERR_NOT_IN_RANGE)
-                    creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
+                    creep.moveTo(targets[0]);
             }
         }
         else if (creep.memory.dumper) {
