@@ -57,7 +57,7 @@ module.exports.loop = function() {
     //     createCreep([MOVE,MOVE,MOVE,MOVE,CLAIM], 'coloniser');
     // }
 
-    if (harvesters.length < 1) {
+    if (harvesters.length < 2) {
         createCreep([WORK,MOVE,MOVE,CARRY], 'harvester');
     }
   
