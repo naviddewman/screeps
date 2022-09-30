@@ -5,7 +5,6 @@ var roleCombatEngineer = {
         
         const storage = Game.getObjectById('63340f12ac9df436b4f8618d');
         const tower = Game.getObjectById('633695b0521c81d44934dc18');
-        console.log(tower.store.getFreeCapacity(RESOURCE_ENERGY));
         const walls = creep.room.find(FIND_STRUCTURES, {
             filter: (s) => s.structureType == STRUCTURE_WALL &&
                 s.hits < 1000
@@ -33,7 +32,7 @@ var roleCombatEngineer = {
             if (creep.memory.dumper) {
                 // maintain tower
                 if (tower.store.getFreeCapacity(RESOURCE_ENERGY > 0)) {
-                    if (creep.transfer(tower) == ERR_NOT_IN_RANGE)
+                    if (creep.transfer(tower, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE)
                         creep.moveTo(tower);
                 }
                 //fortify walls
