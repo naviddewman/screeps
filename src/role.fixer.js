@@ -40,7 +40,7 @@ var findLowestTarget = function(targets) {
     let lowest = 1000000000;
     let lowestTarget;
     for (let target in targets) {
-        console.log(target)
+        console.log(target[1]);
         let hitsLeft = target.hitsMax - target.hits;
         //console.log(hitsLeft);
         if (hitsLeft < lowest) {
