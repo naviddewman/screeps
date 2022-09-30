@@ -5,34 +5,49 @@ var roleCombatEngineer = {
         
         const storage = Game.getObjectById('63340f12ac9df436b4f8618d');
         const tower = Game.getObjectById('633695b0521c81d44934dc18');
+        console.log(tower.store.getFreeCapacity(RESOURCE_ENERGY));
         const walls = creep.room.find(FIND_STRUCTURES, {
             filter: (s) => s.structureType == STRUCTURE_WALL &&
                 s.hits < 1000
         });
-        
-        
-        if(!creep.isFull() && !creep.memory.dumper) {
-            creep.energize(storage);    
-        }
-        
-        else if (creep.isFull())
-            creep.memory.dumper = true;
-        
-        if (creep.memory.dumper) {
-            // maintain tower
-            if (tower.store.getFreeCapacity(RESOURCE_ENERGY > 0)) {
-                if (creep.transfer(tower) == ERR_NOT_IN_RANGE)
-                    creep.moveTo(tower);
+        const hostiles = creep.room.find(FIND_HOSTILE_CREEPS, {
+            filter: function(object) {
+                return object.getActiveBodyparts(ATTACK) == 0;
             }
-            //fortify walls
-            else if (walls.length > 0) {
-                if (creep.repair(walls[0]) == ERR_NOT_IN_RANGE)
-                    creep.moveTo(walls[0]);
-            }
+        });
+        
+        creep.memory.attack = (hostiles.length > 0) ? true : false;
+            
+        if (creep.memory.attack) {
+            if(creep.attack(hostiles[0]) == ERR_NOT_IN_RANGE)
+                creep.moveTo(hostiles[0]);
         }
+        else {
+            if(!creep.isFull() && !creep.memory.dumper) {
+                creep.energize(storage);    
+            }
+            
+            else if (creep.isFull())
+                creep.memory.dumper = true;
+            
+            if (creep.memory.dumper) {
+                // maintain tower
+                if (tower.store.getFreeCapacity(RESOURCE_ENERGY > 0)) {
+                    if (creep.transfer(tower) == ERR_NOT_IN_RANGE)
+                        creep.moveTo(tower);
+                }
+                //fortify walls
+                else if (walls.length > 0) {
+                    if (creep.repair(walls[0]) == ERR_NOT_IN_RANGE)
+                        creep.moveTo(walls[0]);
+                }
+            }
 
-        if (creep.isEmpty())
-            creep.memory.dumper = false;
+            if (creep.isEmpty())
+                creep.memory.dumper = false;
+        }
+        
+        
         
 
 
