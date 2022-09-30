@@ -8,7 +8,6 @@ var roleFixer = {
         const targets = creep.room.find(FIND_STRUCTURES, {
             filter: (s) => s.hits < s.hitsMax
         });
-        targets.sort((a,b) => a.hits - b.hits);
         
         const storage = Game.getObjectById('63340f12ac9df436b4f8618d');
 
