@@ -4,6 +4,7 @@ var roleFixer = {
     run: function(creep) {
         
         const targets = checkForRepairs(creep);
+        console.log(targets);
         const lowestTarget = findLowestTarget(targets);
         
         const storage = Game.getObjectById('63340f12ac9df436b4f8618d');
@@ -40,7 +41,7 @@ var findLowestTarget = function(targets) {
     let lowestTarget;
     for (let target in targets) {
         let hitsLeft = target.hitsMax - target.hits;
-        console.log(hitsLeft);
+        //console.log(hitsLeft);
         if (hitsLeft < lowest) {
             lowest = hitsLeft;
             lowestTarget = target;
