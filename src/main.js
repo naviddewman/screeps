@@ -1,3 +1,4 @@
+require('prototypes.tower');
 var roleBuilder = require('role.builder');
 var roleUpgrader = require('role.upgrader');
 var roleHarvester = require('role.harvester');
@@ -107,6 +108,9 @@ module.exports.loop = function() {
         var creep = combatEngineers[name];
         roleCombatEngineer.run(creep);
     }
+
+    const tower = Game.getObjectById('633695b0521c81d44934dc18');
+    tower.defend();
   
     
 }
