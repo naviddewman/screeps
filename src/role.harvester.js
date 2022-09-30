@@ -17,9 +17,9 @@ var roleHarvester = {
         });
         
         if (!creep.isFull() && !creep.memory.dumper) {
-            //creep.energize(container);
-            if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE)
-                creep.moveTo(sources[0]);
+            creep.energize(container);
+            // if (creep.harvest(sources[0]) == ERR_NOT_IN_RANGE)
+            //     creep.moveTo(sources[0]);
         }
 
         if(creep.isFull())
