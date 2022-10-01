@@ -54,7 +54,7 @@ module.exports.loop = function() {
         createCreep([CARRY,CARRY,CARRY,MOVE,MOVE], 'trucker');
     }
 
-    if (builders.length < 5) {
+    if (builders.length < 2) {
         createCreep([WORK,WORK,MOVE,MOVE,MOVE,MOVE,CARRY,CARRY], 'builder');
     }
 
