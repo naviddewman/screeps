@@ -21,8 +21,8 @@ var roleBuilder = {
             if (targets.length > 0) {
                 let target = creep.pos.findClosestByPath(targets);
                 
-                if (creep.build(targets) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(targets);
+                if (creep.build(target) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(target);
                 }
             }
             else {
