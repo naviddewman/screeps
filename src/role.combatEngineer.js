@@ -8,7 +8,7 @@ var roleCombatEngineer = {
         const tower = Game.getObjectById('633695b0521c81d44934dc18');
         const walls = creep.room.find(FIND_STRUCTURES, {
             filter: (s) => s.structureType == STRUCTURE_WALL &&
-                s.hits < 100000
+                s.hits < 50000
         });
         const hostiles = creep.room.find(FIND_HOSTILE_CREEPS, {
             filter: function(object) {
