@@ -6,7 +6,8 @@ var roleFixer = {
         
         const controller = creep.room.controller;
         const targets = creep.room.find(FIND_STRUCTURES, {
-            filter: (s) => s.hits < s.hitsMax
+            filter: (s) => (s.structureType == STRUCTURE_CONTAINER || s.structureType == STUCTURE_ROAD) &&
+            s.hits < s.hitsMax
         });
         
         const storage = Game.getObjectById('63340f12ac9df436b4f8618d');
