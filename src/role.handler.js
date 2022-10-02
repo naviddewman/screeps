@@ -4,7 +4,7 @@ var roleHandler = {
     
     run: function(creep) {
 
-        const link = Game.getObjectById('63396cab64973c7a612afe7c');
+        const link = Game.getObjectById('633933adfaf8548fddf7dad2');
         const storage = Game.getObjectById('63340f12ac9df436b4f8618d');
         
         if (creep.pos.x == 17 && creep.pos.y == 28) {
