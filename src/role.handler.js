@@ -11,7 +11,7 @@ var roleHandler = {
             if (!creep.isFull() && !creep.memory.dumper) {
                 creep.withdraw(link, RESOURCE_ENERGY)
             }
-            else if (creep.store.getUsedCapacity() > 0) {
+            else if (creep.isFull()) {
                 creep.memory.dumper = true;
             }
             if (creep.memory.dumper) {
