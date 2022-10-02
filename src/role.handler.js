@@ -8,8 +8,8 @@ var roleHandler = {
         const storage = Game.getObjectById('63340f12ac9df436b4f8618d');
         
         if (creep.pos.x == 17 && creep.pos.y == 28) {
-            console.log('in if');
             if (!creep.isFull() && !creep.memory.dumper) {
+                console.log('in if');
                 creep.withdraw(link, RESOURCE_ENERGY);
             }
             else if (creep.isFull()) {
