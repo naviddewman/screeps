@@ -9,8 +9,7 @@ var roleHandler = {
         
         if (creep.pos.x == 17 && creep.pos.y == 28) {
             if (!creep.isFull() && !creep.memory.dumper) {
-                if (creep.withdraw(link, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE)
-                    creep.moveTo(link); 
+                creep.withdraw(link, RESOURCE_ENERGY)
             }
             else if (creep.isFull()) {
                 creep.memory.dumper = true;
