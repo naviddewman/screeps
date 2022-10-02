@@ -59,7 +59,7 @@ module.exports.loop = function() {
     }
 
     if (combatEngineers.length < 1) {
-        createCreep([WORK,WORK,WORK,MOVE,MOVE,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY,CARRY,ATTACK,ATTACK,ATTACK,TOUGH,TOUGH,TOUGH,TOUGH], 'combatEngineer');
+        createCreep([WORK,WORK,WORK,MOVE,MOVE,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY,CARRY], 'combatEngineer');
     }
 
     // if (colonisers.length < 1) {
