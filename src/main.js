@@ -127,6 +127,10 @@ module.exports.loop = function() {
 
     const tower = Game.getObjectById('633695b0521c81d44934dc18');
     tower.defend();
+
+    const link = Game.getObjectById('63396cab64973c7a612afe7c');
+    const destination = Game.getObjectById('633933adfaf8548fddf7dad2');
+    link.sendTo(destination);
   
     
 }
