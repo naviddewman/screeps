@@ -1,4 +1,5 @@
 require('prototypes.tower');
+require('prototypes.link');
 var roleBuilder = require('role.builder');
 var roleUpgrader = require('role.upgrader');
 var roleHarvester = require('role.harvester');
@@ -9,6 +10,7 @@ var roleColoniser = require('role.coloniser');
 var roleTrucker = require('role.trucker');
 var roleCombatEngineer = require('role.combatEngineer');
 var roleScavenger = require('role.scavenger');
+var roleHandler = require('role.handler');
 
 module.exports.loop = function() {
     
@@ -20,8 +22,9 @@ module.exports.loop = function() {
     var fixers = filterRole('fixer');
     var colonisers = filterRole('coloniser');
     var truckers = filterRole('trucker');
-    var combatEngineers = filterRole ('combatEngineer');
-    var scavengers = filterRole ('scavenger');
+    var combatEngineers = filterRole('combatEngineer');
+    var scavengers = filterRole('scavenger');
+    var handlers = filterRole('handler');
     
     const spawn = Game.spawns['Spawn1'];
     
@@ -75,10 +78,13 @@ module.exports.loop = function() {
     if (scavengers.length < 2) {
         createCreep([WORK,WORK,WORK,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY], 'scavenger');
     }
+    
+    if (handlers.length < 1) {
+        createCreep([CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,CARRY,MOVE], 'handler');
+    }
 
-    
-    
-  
+
+
     for (var name in upgraders) {
         var creep = upgraders[name];
         roleUpgrader.run(creep);
@@ -123,6 +129,11 @@ module.exports.loop = function() {
     for (var name in scavengers) {
         var creep = scavengers[name];
         roleScavenger.run(creep);
+    }
+
+    for (var name in handlers) {
+        var creep = handlers[name];
+        roleHandler.run(creep);
     }
 
     const tower = Game.getObjectById('633695b0521c81d44934dc18');
