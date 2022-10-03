@@ -11,6 +11,7 @@ StructureTower.prototype.repair =
                 s.structureType == STRUCTURE_CONTAINER) &&
                 s.hits < s.hitsMax
         });
+        console.log(targets);
 
         if (targets.length > 0) {
             this.repair(targets[0]);
