@@ -3,7 +3,7 @@ var roleCombatEngineer = {
 
     run: function(creep, towers) {
         
-        const drainedTowers = _.filter(towers, (t) => t.store.getFreeCapacity() > 0);
+        const drainedTowers = _.filter(towers, (t) => t.store.getFreeCapacity(RESOURCE_ENERGY) > 0);
         console.log(drainedTowers);
         
         const controller = creep.room.controller;
