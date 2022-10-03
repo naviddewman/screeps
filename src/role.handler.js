@@ -23,6 +23,9 @@ var roleHandler = {
         }
         else 
             creep.moveTo(17,28);
+
+        if (creep.ticksToLive < 50 && creep.store.getUsedCapacity(RESOURCE_ENERGY) > 0)
+            creep.transfer(storage, RESOURCE_ENERGY);
             
     }
 };
