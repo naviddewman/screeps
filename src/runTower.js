@@ -5,7 +5,7 @@ var runTower = {
 
     run: function(tower) {
 
-        console.log('running tower')
+        console.log(tower);
         const hostile = this.pos.findClosestByRange(FIND_HOSTILE_CREEPS);
         if (hostile != undefined) { tower.attack(hostile); }
         else {
