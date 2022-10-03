@@ -45,7 +45,7 @@ module.exports.loop = function() {
         }
     }
     
-    if (haulers.length < 2) {
+    if (haulers.length < 3) {
         createCreep([WORK,WORK,MOVE,MOVE,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY], 'hauler');
     }
     
