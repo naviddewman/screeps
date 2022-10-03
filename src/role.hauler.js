@@ -1,3 +1,4 @@
+require('prototypes.creep.utils');
 
 var roleUpgrader = require('role.upgrader');
 var roleHauler = {
@@ -19,15 +20,17 @@ var roleHauler = {
         // });
         
         const container = Game.getObjectById('63308368c677e3f2efed7d86');
+        const storage = Game.getObjectById('63340f12ac9df436b4f8618d')
         
             
-        if (creep.memory.dumper == false && creep.store.getFreeCapacity(RESOURCE_ENERGY) > 0) {
-        if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE)
-                creep.moveTo(container);
+        if (!creep.isFull() && !creep.memory.dumper) {
+            if (container.store.getUsedCapacity(RESOURCE_ENERGY) < 300)
+                creep.energize(storage);
+            else
+                creep.energize(container);
         }
             
-        let num = spawn.store.getFreeCapacity(RESOURCE_ENERGY);
-        if (creep.store.getFreeCapacity() == 0 && creep.memory.dumper == false) {
+        if (creep.isFull()) {
             creep.memory.dumper = true;
         }
             
@@ -43,7 +46,7 @@ var roleHauler = {
             }
         }
       
-        if (creep.store.getUsedCapacity() == 0)
+        if (creep.isEmpty())
             creep.memory.dumper = false;
         
         // if there is no space in the extenders, upgrade controller
