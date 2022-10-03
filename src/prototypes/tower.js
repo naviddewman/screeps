@@ -11,7 +11,7 @@ StructureTower.prototype.repair =
         });
         console.log(target);
 
-        if (targets.length > 0) {
+        if (target) {
             this.repair(target);
         }
     };
