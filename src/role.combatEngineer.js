@@ -12,42 +12,27 @@ var roleCombatEngineer = {
                 s.hits < 50000
         });
             
-        if(!creep.isFull() && !creep.memory.dumper) {
-                creep.energize(storage);    
-        }
-            
+        if (!creep.isFull() && !creep.memory.dumper)
+            creep.energize(storage);
+        
         else if (creep.isFull())
             creep.memory.dumper = true;
-            
-        if (creep.memory.dumper) {   
-            // maintain tower    
-            if (drainedTowers.length > 0) {
-                for (let tower of towers) {
+        
+        if(creep.memory.dumper) {
+            if(drainedTowers.length > 0) {
+                for (let tower in drainedTowers) {
                     if (creep.transfer(tower, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE)
                         creep.moveTo(tower);
-                    }
-                }    
-            }
-               //fortify walls
-            else if (walls.length > 0) {
-                if (creep.repair(walls[0]) == ERR_NOT_IN_RANGE)
-                        creep.moveTo(walls[0]);
+                }
             }
             else {
-                if(creep.upgradeController(controller) ==  ERR_NOT_IN_RANGE)
-                    creep.moveTo(controller);
+                //maintain walls
+                //maintain ramparts
             }
-
-        if (creep.isEmpty())
-            creep.memory.dumper = false;
+            if (creep.isEmpty())
+                creep.memory.dumper = false;
+        }
     }
-        
-        
-        
-
-
-        //maintain ramparts
-
 };
 
 
