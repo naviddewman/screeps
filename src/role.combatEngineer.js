@@ -21,6 +21,8 @@ var roleCombatEngineer = {
         if(creep.memory.dumper) {
             if(drainedTowers.length > 0) {
                 for (let tower of drainedTowers) {
+                    if(creep.isEmpty())
+                        break;
                     if (creep.transfer(tower, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE)
                         creep.moveTo(tower);
                 }
