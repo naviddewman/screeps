@@ -6,14 +6,12 @@ StructureTower.prototype.defend =
 
 StructureTower.prototype.repair =
     function() {
-        const targets = this.pos.findClosestByRange(FIND_STRUCTURES, {
-            filter: (s) => (s.structureType == STRUCTURE_ROAD ||
-                s.structureType == STRUCTURE_CONTAINER) &&
-                s.hits < s.hitsMax
+        const target = this.pos.findClosestByRange(FIND_STRUCTURES, {
+            filter: (s) => s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL && s.structureType != STRUCTURE_RAMPART
         });
-        console.log(targets);
+        console.log(target);
 
         if (targets.length > 0) {
-            this.repair(targets[0]);
+            this.repair(target);
         }
     };
