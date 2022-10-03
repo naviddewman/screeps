@@ -28,6 +28,7 @@ var roleCombatEngineer = {
                 }
             }
             else {
+                console.log('else');
                 //maintain walls
                 //maintain ramparts
             }
