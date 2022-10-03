@@ -126,7 +126,7 @@ module.exports.loop = function() {
 
     for (var name in combatEngineers) {
         var creep = combatEngineers[name];
-        roleCombatEngineer.run(creep);
+        roleCombatEngineer.run(creep, towers);
     }
 
     for (var name in scavengers) {
