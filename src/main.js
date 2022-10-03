@@ -139,6 +139,7 @@ module.exports.loop = function() {
         roleHandler.run(creep);
     }
 
+    console.log(towers);
     const tower = Game.getObjectById('633695b0521c81d44934dc18');
     tower.defend();
     tower.repairStructures();
