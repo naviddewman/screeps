@@ -42,8 +42,11 @@ var roleHarvester = {
             creep.memory.dumper = false;
         
         // if there is no space in the extenders, upgrade controller
-        if (extenders.length == false && spawn.store.getFreeCapacity(RESOURCE_ENERGY) == 0)
-            roleUpgrader.run(creep);
+        if (extenders.length == false && spawn.store.getFreeCapacity(RESOURCE_ENERGY) == 0) {
+            if (creep.upgradeController(controller) == ERR_NOT_IN_RANGE)
+                creep.moveTo(controller);
+        }
+            
         
         // if(creep.memory.dumper == false && creep.store.getFreeCapacity() > 0) {
         //         creep.moveTo(sources[0]);
