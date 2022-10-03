@@ -27,6 +27,9 @@ module.exports.loop = function() {
     var handlers = filterRole('handler');
     
     const spawn = Game.spawns['Spawn1'];
+    const towers = spawn.room.find(FIND_MY_STRUCTURES, {
+        filter: (s) => s.structureType == STRUCTURE_TOWER
+    });
     
     const sources = spawn.room.find(FIND_SOURCES);
     for (let source of sources) {
