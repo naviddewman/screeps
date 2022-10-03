@@ -24,6 +24,7 @@ var roleHandler = {
         else 
             creep.moveTo(17,28);
 
+        // if creep is about to die and has energy, transfer energy to storage.
         if (creep.ticksToLive < 50 && creep.store.getUsedCapacity(RESOURCE_ENERGY) > 0)
             creep.transfer(storage, RESOURCE_ENERGY);
             
