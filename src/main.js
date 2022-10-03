@@ -11,6 +11,7 @@ var roleTrucker = require('role.trucker');
 var roleCombatEngineer = require('role.combatEngineer');
 var roleScavenger = require('role.scavenger');
 var roleHandler = require('role.handler');
+var runTower = require('runTower');
 
 module.exports.loop = function() {
     
@@ -139,9 +140,13 @@ module.exports.loop = function() {
         roleHandler.run(creep);
     }
 
-    const tower = Game.getObjectById('633695b0521c81d44934dc18');
-    tower.defend();
-    tower.repairStructures();
+    for (var tower of towers) {
+        runTower.run(tower);
+    }
+
+    // const tower = Game.getObjectById('633695b0521c81d44934dc18');
+    // tower.defend();
+    // tower.repairStructures();
 
     const link = Game.getObjectById('63396cab64973c7a612afe7c');
     const destination = Game.getObjectById('633933adfaf8548fddf7dad2');
