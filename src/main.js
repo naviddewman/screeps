@@ -74,7 +74,7 @@ module.exports.loop = function() {
     // }
 
     if (haulers.length == 0 && spawn.spawning == null) {
-        if (harvesters.length < 1) {
+        if (harvesters.length < 2) {
             createCreep([WORK,MOVE,MOVE,CARRY], 'harvester');
         }
     }
