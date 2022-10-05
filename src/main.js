@@ -69,9 +69,9 @@ module.exports.loop = function() {
         createCreep([WORK,WORK,WORK,MOVE,MOVE,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY,CARRY], 'combatEngineer');
     }
 
-    if (colonisers.length < 1) {
-        createCreep([MOVE,MOVE,MOVE,MOVE,CLAIM], 'coloniser');
-    }
+    // if (colonisers.length < 1) {
+    //     createCreep([MOVE,MOVE,MOVE,MOVE,CLAIM], 'coloniser');
+    // }
 
     if (haulers.length == 0 && spawn.spawning == null) {
         if (harvesters.length < 2) {
