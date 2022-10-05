@@ -13,9 +13,12 @@ var roleColoniser = {
             if (creep.room.name = homeRoom) {
                 creep.moveTo(Game.flags.E44N29);
             }
+            // else {
+
+            // }
             
-            if(creep.claimController(controller) == ERR_NOT_IN_RANGE)
-                creep.moveTo(controller);
+            // if(creep.claimController(controller) == ERR_NOT_IN_RANGE)
+            //     creep.moveTo(controller);
         
 
     }
