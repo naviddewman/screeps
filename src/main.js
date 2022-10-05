@@ -69,9 +69,9 @@ module.exports.loop = function() {
         createCreep([WORK,WORK,WORK,MOVE,MOVE,MOVE,MOVE,MOVE,CARRY,CARRY,CARRY,CARRY], 'combatEngineer');
     }
 
-    // if (colonisers.length < 1) {
-    //     createCreep([MOVE,MOVE,MOVE,MOVE,CLAIM], 'coloniser');
-    // }
+    if (colonisers.length < 1) {
+        createCreep([MOVE,MOVE,MOVE,MOVE,CLAIM], 'coloniser');
+    }
 
     if (haulers.length == 0 && spawn.spawning == null) {
         if (harvesters.length < 2) {
@@ -138,6 +138,11 @@ module.exports.loop = function() {
     for (var name in handlers) {
         var creep = handlers[name];
         roleHandler.run(creep);
+    }
+
+    for (var name in colonisers) {
+        var creep = colonisers[name];
+        roleColoniser.run(creep);
     }
 
     for (var tower of towers) {
