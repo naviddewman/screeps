@@ -140,10 +140,10 @@ module.exports.loop = function() {
         roleHandler.run(creep);
     }
 
-    for (var name in colonisers) {
-        var creep = colonisers[name];
-        roleColoniser.run(creep);
-    }
+    // for (var name in colonisers) {
+    //     var creep = colonisers[name];
+    //     roleColoniser.run(creep);
+    // }
 
     for (var tower of towers) {
         runTower.run(tower);
