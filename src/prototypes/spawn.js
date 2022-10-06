@@ -7,7 +7,7 @@ StructureSpawn.prototype.doSpawning =
         for (let name in roles)
             population[name] = _.sum(creeps, (c) => c.memory.role == name);
 
-        const sources = spawn.room.find(FIND_SOURCES);
+        const sources = this.room.find(FIND_SOURCES);
 
         for (let source of sources) {
             if (!_.some(miners, c => c.memory.targetId == source.id)) {
