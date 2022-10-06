@@ -10,7 +10,7 @@ module.exports = {
     run: function(creep) {
         const homeRoom = 'E43N29';
 
-            if (creep.room.name = homeRoom) {
+            if (creep.room.name == homeRoom) {
                 console.log(creep.room.name);
                 creep.moveTo(Game.flags.claimRoom);
             }
