@@ -3,7 +3,7 @@ StructureSpawn.prototype.doSpawning =
         const room = this.room;
         const creeps = room.find(FIND_MY_CREEPS);
         
-        const globalScavengers = finddGlobalCreeps('scavenger');
+        const globalScavengers = findGlobalCreeps('scavenger');
         const globalBuilders = findGlobalCreeps('builder');
         
         let population = {};
