@@ -67,7 +67,7 @@ StructureSpawn.prototype.doSpawning =
 StructureSpawn.prototype.spawnNonTargetedCreep = 
     function(role) {
         const body = genBody(role);
-        const name = role.name + '-' + room.name + '-' + String(Game.time).slice(-4);
+        const name = role.name + '-' + this.room.name + '-' + String(Game.time).slice(-4);
         
         return this.spawnCreep(body, name, { 
             memory: {
@@ -79,7 +79,7 @@ StructureSpawn.prototype.spawnNonTargetedCreep =
 StructureSpawn.prototype.spawnTargetedCreep = 
     function(role, targetId) {
         const body = genBody(role);
-        const name = role.name + '-' + room.name + '-' + String(Game.time).slice(-4);
+        const name = role.name + '-' + this.room.name + '-' + String(Game.time).slice(-4);
         
         return this.spawnCreep(body, name, { 
             memory: {
