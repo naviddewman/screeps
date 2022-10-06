@@ -5,6 +5,7 @@ StructureSpawn.prototype.doSpawning =
         
         const globalScavengers = findGlobalCreeps('scavenger');
         const globalBuilders = findGlobalCreeps('builder');
+        const globalColonisers = findGlobalCreeps('coloniser');
 
         let population = {};
         for (let name in roles)
@@ -48,9 +49,10 @@ StructureSpawn.prototype.doSpawning =
             this.spawnNonTargetedCreep(roles['combatEngineer']);
         }
     
-        // if (population['coloniser'] < 1) {
-        //     this.spawnTargetedCreep(roles['hauler'], targetRoom);
-        // }
+        // if there is a room marked to be claimed and there is no coloniser already.
+        if (Game.flags.claimRoom && globalColonisers.length < 1) {
+            this.spawnTargetedCreep(roles['coloniser'], Game.flags.claimRoom);
+        }
     
         if (population['hauler'] == 0 && this.spawning == null) {
             if (population['harvester'] < this.memory.harvesters) {
