@@ -9,7 +9,11 @@ module.exports = {
     ],
     
     
-    run: function(creep, towers) {
+    run: function(creep) {
+
+        const towers = spawn.room.find(FIND_MY_STRUCTURES, {
+            filter: (s) => s.structureType == STRUCTURE_TOWER
+        });
         
         const drainedTowers = _.filter(towers, (t) => t.store.getFreeCapacity(RESOURCE_ENERGY) > 0);
         console.log(drainedTowers);
