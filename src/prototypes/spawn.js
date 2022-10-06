@@ -87,7 +87,6 @@ StructureSpawn.prototype.spawnTargetedCreep =
                 dumper: false,
                 targetId: targetId
             }});
-
     }
 
 function genBody(role) {
