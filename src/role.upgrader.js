@@ -25,7 +25,7 @@ module.exports = {
             if (creep.memory.dumper && creep.room.name != creep.memory.targetRoom) {
                 creep.moveTo(Game.flags.buildInRoom);
             }
-            else if (creep.memory.dumper && creep.room.name == creep.memory.targetRoom) {
+            if (creep.memory.dumper && creep.room.name == creep.memory.targetRoom) {
                 const controller = creep.room.controller;
                 if (creep.ungradeController(controller) == ERR_NOT_IN_RANGE)
                     creep.moveTo(controller);
