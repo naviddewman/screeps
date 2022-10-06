@@ -23,11 +23,9 @@ module.exports = {
         
         if ((creep.memory.dumper == false) && (creep.store.getFreeCapacity() == 0))
             creep.memory.dumper = true;
-            
-        if (creep.memory.dumper) {
-            if (creep.memory.targetRoom) {
-                
-            }
+        
+        if (creep.memory.targetRoom != undefined && creep.room.name != creep.memory.targetRoom) {
+            creep.moveTo(Game.flags.buildInRoom);
         }
         
         if (creep.memory.dumper) {
