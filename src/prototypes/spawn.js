@@ -55,8 +55,11 @@ StructureSpawn.prototype.doSpawning =
             }
         }
     
-        if (population['scavenger'] < this.memory.scavengers) {
-            this.spawnNonTargetedCreep(roles['scavenger']);
+        //if scavengers is in the spawn's memory
+        if (this.memory.scavengers) {
+            if (population['scavenger'] < this.memory.scavengers) {
+                this.spawnNonTargetedCreep(roles['scavenger']);
+            }
         }
         
         if (population['handler'] < this.memory.handlers) {
