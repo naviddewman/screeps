@@ -27,7 +27,7 @@ module.exports = {
         if (creep.memory.targetRoom != undefined && creep.room.name != creep.memory.targetRoom) {
             creep.moveTo(Game.flags.buildInRoom);
         }
-        
+
         if (creep.memory.dumper) {
             if (targets.length > 0) {
                 let target = creep.pos.findClosestByPath(targets);
@@ -36,10 +36,10 @@ module.exports = {
                     creep.moveTo(target);
                 }
             }
-            else {
-                if (creep.upgradeController(controller) == ERR_NOT_IN_RANGE)
-                    creep.moveTo(controller);
-            }  
+            // else {
+            //     if (creep.upgradeController(controller) == ERR_NOT_IN_RANGE)
+            //         creep.moveTo(controller);
+            // }  
         }
         
         if (creep.store.getUsedCapacity() == 0)
