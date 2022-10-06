@@ -42,7 +42,7 @@ StructureSpawn.prototype.doSpawning =
         }
     
         if (globalBuilders < this.memory.builders) {
-            this.spawnNonTargetedCreep(roles['builder']);
+            this.spawnTargetedCreep(roles['builder'], 'E44N29');
         }
     
         if (population['combatEngineer'] < this.memory.combatEngineers) {
