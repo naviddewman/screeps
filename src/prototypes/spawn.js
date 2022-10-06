@@ -10,7 +10,7 @@ StructureSpawn.prototype.doSpawning =
         const sources = this.room.find(FIND_SOURCES);
 
         for (let source of sources) {
-            if (!_.some(population['miner'], c => c.memory.targetId == source.id)) {
+            if (!_.some(creeps, c => c.memory.role == 'miner' && c.memory.targetId == source.id)) {
                 var containers = source.pos.findInRange(FIND_STRUCTURES, 1, {
                     filter: s => s.structureType == STRUCTURE_CONTAINER
                 });
