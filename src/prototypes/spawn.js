@@ -49,7 +49,7 @@ StructureSpawn.prototype.doSpawning =
         //     this.spawnTargetedCreep(roles['hauler'], targetRoom);
         // }
     
-        if (population['hauler'] == 0 && spawn.spawning == null) {
+        if (population['hauler'] == 0 && this.spawning == null) {
             if (population['harvester'] < this.memory.harvesters) {
                 this.spawnNonTargetedCreep(roles['harvester']);
             }
