@@ -24,6 +24,11 @@ module.exports = {
         if ((creep.memory.dumper == false) && (creep.store.getFreeCapacity() == 0))
             creep.memory.dumper = true;
             
+        if (creep.memory.dumper) {
+            if (creep.memory.targetRoom) {
+                
+            }
+        }
         
         if (creep.memory.dumper) {
             if (targets.length > 0) {
