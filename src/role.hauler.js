@@ -56,9 +56,11 @@ module.exports = {
         if (creep.isEmpty())
             creep.memory.dumper = false;
         
-        // if there is no space in the extenders, upgrade controller
-        // if (extenders.length == false && spawn.store.getFreeCapacity(RESOURCE_ENERGY) == 0)
-            // EDIT --> roleUpgrader.run(creep);
-       
+        
+        const controller = creep.room.controller;
+            // if there is no space in the extenders, upgrade controller
+        if (extenders.length == false && spawn.store.getFreeCapacity(RESOURCE_ENERGY) == 0)
+            if (creep.upgradeController(controller) == ERR_NOT_IN_RANGE)
+                creep.moveTo(controller);
     }
 };
