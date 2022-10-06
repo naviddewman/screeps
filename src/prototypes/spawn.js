@@ -41,7 +41,7 @@ StructureSpawn.prototype.doSpawning =
             this.spawnNonTargetedCreep(roles['trucker']);
         }
     
-        if (globalBuilders < this.memory.builders) {
+        if (globalBuilders.length < this.memory.builders) {
             this.spawnTargetedCreep(roles['builder'], 'E44N29');
         }
     
@@ -62,7 +62,7 @@ StructureSpawn.prototype.doSpawning =
     
         //if scavengers is in the spawn's memory
         if (this.memory.scavengers) {
-            if (globalScavengers < this.memory.scavengers) {
+            if (globalScavengers.length < this.memory.scavengers) {
                 this.spawnNonTargetedCreep(roles['scavenger']);
             }
         }
