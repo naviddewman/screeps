@@ -3,6 +3,9 @@ StructureSpawn.prototype.doSpawning =
         const room = this.room;
         const creeps = room.find(FIND_MY_CREEPS);
         
+        const globalScavengers = finddGlobalCreeps('scavenger');
+        const globalBuilders = findGlobalCreeps('builder');
+        
         let population = {};
         for (let name in roles)
             population[name] = _.sum(creeps, (c) => c.memory.role == name);
@@ -37,7 +40,7 @@ StructureSpawn.prototype.doSpawning =
             this.spawnNonTargetedCreep(roles['trucker']);
         }
     
-        if (population['builder'] < this.memory.builders) {
+        if (globalBuilders < this.memory.builders) {
             this.spawnNonTargetedCreep(roles['builder']);
         }
     
@@ -57,7 +60,7 @@ StructureSpawn.prototype.doSpawning =
     
         //if scavengers is in the spawn's memory
         if (this.memory.scavengers) {
-            if (population['scavenger'] < this.memory.scavengers) {
+            if (globalScavengers < this.memory.scavengers) {
                 this.spawnNonTargetedCreep(roles['scavenger']);
             }
         }
@@ -99,4 +102,8 @@ function genBody(role) {
         for (let i = 0; i < partCount; i++) { body.push(part.type); }
     }
     return body;
+}
+
+function findGlobalCreeps(role) {
+    return _.filter(Game.creeps, (c) => c.memory.role == role);
 }
