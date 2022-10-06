@@ -5,6 +5,7 @@ StructureSpawn.prototype.doSpawning =
         
         const globalScavengers = findGlobalCreeps('scavenger');
         const globalBuilders = findGlobalCreeps('builder');
+        console.log(globalScavengers);
         
         let population = {};
         for (let name in roles)
