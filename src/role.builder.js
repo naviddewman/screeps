@@ -3,8 +3,8 @@ module.exports = {
     name: 'builder',
     parts: [
         {type: WORK, factor: 2},
-        {type: CARRY, factor: 2},
-        {type: MOVE, factor: 4},
+        {type: CARRY, factor: 4},
+        {type: MOVE, factor: 6},
     ],
 
     
