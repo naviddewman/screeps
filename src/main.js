@@ -15,7 +15,7 @@ const roles = {
     coloniser: require('role.coloniser'),
     trucker: require('role.trucker'),
     combatEngineer: require('role.combatEngineer'),
-    scavenger: require('role.savenger'),
+    scavenger: require('role.scavenger'),
     handler: require('role.handler'),
 }
 

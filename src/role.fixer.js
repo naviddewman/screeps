@@ -1,6 +1,15 @@
 require('prototypes.creep.utils');
 
-var roleFixer = {
+module.exports = {
+    
+    name: 'fixer',
+    parts: [
+        {type: WORK, factor: 3},
+        {type: CARRY, factor: 3},
+        {type: MOVE, factor: 3},
+    ],
+    
+    
     
     run: function(creep) {
         
@@ -33,6 +42,3 @@ var roleFixer = {
             creep.memory.dumper = false;
     }    
 };
-
-
-module.exports = roleFixer;

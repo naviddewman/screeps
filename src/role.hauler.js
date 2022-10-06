@@ -1,7 +1,14 @@
 require('prototypes.creep.utils');
 
-var roleUpgrader = require('role.upgrader');
-var roleHauler = {
+module.exports = {
+    
+    name: 'hauler',
+    parts: [
+        {type: WORK, factor: 2},
+        {type: CARRY, factor: 3},
+        {type: MOVE, factor: 5},
+    ],
+    
     
     run: function(creep) {
         const spawn = Game.spawns['Spawn1'];
@@ -50,11 +57,8 @@ var roleHauler = {
             creep.memory.dumper = false;
         
         // if there is no space in the extenders, upgrade controller
-        if (extenders.length == false && spawn.store.getFreeCapacity(RESOURCE_ENERGY) == 0)
-            roleUpgrader.run(creep);
+        // if (extenders.length == false && spawn.store.getFreeCapacity(RESOURCE_ENERGY) == 0)
+            // EDIT --> roleUpgrader.run(creep);
        
     }
 };
-        
-
-module.exports = roleHauler;

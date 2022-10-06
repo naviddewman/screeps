@@ -1,7 +1,16 @@
 require('prototypes.creep.utils');
 
-var roleScavenger = {
+module.exports = {
 
+    name: 'scavenger',
+    parts: [
+        {type: WORK, factor: 3},
+        {type: CARRY, factor: 8},
+        {type: MOVE, factor: 8},
+    ],
+    
+    
+    
     run: function(creep) {
         const homeRoom = 'E43N29';
         const targetRoom = 'E43N28';
@@ -34,5 +43,3 @@ var roleScavenger = {
             creep.memory.dumper = false;
     }
 };
-
-module.exports = roleScavenger;

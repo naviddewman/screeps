@@ -1,5 +1,13 @@
 
-var roleMiner = {
+module.exports = {
+    
+    name: 'miner',
+    parts: [
+        {type: WORK, factor: 5},
+        {type: MOVE, factor: 2},
+    ],
+    
+    
     
     run: function(creep) {
         const source = Game.getObjectById(creep.memory.targetId);
@@ -13,6 +21,3 @@ var roleMiner = {
             creep.moveTo(container);
     }
 };
-
-
-module.exports = roleMiner;

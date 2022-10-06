@@ -1,6 +1,11 @@
 require('prototypes.creep.utils');
 
-var roleHandler = {
+module.exports = {
+    name: 'handler',
+    parts: [
+        {type: CARRY, factor: 16},
+        {type: MOVE, factor: 1},
+    ],
     
     run: function(creep) {
 
@@ -30,5 +35,3 @@ var roleHandler = {
             
     }
 };
-
-module.exports = roleHandler;

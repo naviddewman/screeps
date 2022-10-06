@@ -1,5 +1,13 @@
 
-var roleBuilder = {
+module.exports = {
+    name: 'builder',
+    parts: [
+        {type: WORK, factor: 2},
+        {type: CARRY, factor: 2},
+        {type: MOVE, factor: 4},
+    ],
+
+    
     
     run: function(creep) {
         const spawn = Game.spawns['Spawn1'];
@@ -35,5 +43,3 @@ var roleBuilder = {
             creep.memory.dumper = false;
     }
 };
-
-module.exports = roleBuilder;

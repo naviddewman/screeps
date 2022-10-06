@@ -1,6 +1,11 @@
 // creep to claim new rooms for the motherland.
 
-var roleColoniser = {
+module.exports = {
+    name: 'coloniser',
+    parts: [
+        {type: CLAIM, factor: 1},
+        {type: MOVE, factor: 1},
+    ],
 
     run: function(creep) {
         const exit = creep.room.find(FIND_EXIT_BOTTOM);
@@ -23,5 +28,3 @@ var roleColoniser = {
 
     }
 };
-
-module.exports = roleColoniser;

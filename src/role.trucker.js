@@ -2,8 +2,16 @@ require('prototypes.creep.energize');
 require('prototypes.creep.utils');
 
 
-var roleTrucker = {
+module.exports = {
 
+    name: 'trucker',
+    parts: [
+        {type: CARRY, factor: 3},
+        {type: MOVE, factor: 2},
+    ],
+    
+    
+    
     run: function(creep) {
         const container = Game.getObjectById('633118832f3c176d63204257');
         const storage = creep.findStorage();
@@ -23,5 +31,3 @@ var roleTrucker = {
         }
     }
 };
-
-module.exports = roleTrucker;

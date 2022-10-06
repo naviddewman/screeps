@@ -1,6 +1,14 @@
 
-var roleCombatEngineer = {
+module.exports = {
 
+    name: 'combatEngineer',
+    parts: [
+        {type: WORK, factor: 3},
+        {type: CARRY, factor: 4},
+        {type: MOVE, factor: 5},
+    ],
+    
+    
     run: function(creep, towers) {
         
         const drainedTowers = _.filter(towers, (t) => t.store.getFreeCapacity(RESOURCE_ENERGY) > 0);
@@ -38,7 +46,3 @@ var roleCombatEngineer = {
         }
     }
 };
-
-
-
-module.exports = roleCombatEngineer;

@@ -1,6 +1,15 @@
 require('prototypes.creep.utils');
 
-var roleUpgrader = {
+module.exports = {
+    
+    name: 'upgrader',
+    parts: [
+        {type: WORK, factor: 4},
+        {type: CARRY, factor: 2},
+        {type: MOVE, factor: 5},
+    ],
+    
+    
     
     run: function(creep) {
         var sources = creep.room.find(FIND_SOURCES);
@@ -28,7 +37,4 @@ var roleUpgrader = {
         }
     }
 };
-
-module.exports = roleUpgrader;
-
 

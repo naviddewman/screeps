@@ -2,7 +2,16 @@
 
 
 
-var roleHarvester = {
+module.exports = {
+    
+    name: 'harvester',
+    parts: [
+        {type: WORK, factor: 1},
+        {type: CARRY, factor: 1},
+        {type: MOVE, factor: 2},
+    ],
+    
+    
     
     run: function(creep) {
         var sources = creep.room.find(FIND_SOURCES);
@@ -68,5 +77,3 @@ var roleHarvester = {
         // }
     }
 };
-
-module.exports = roleHarvester;
