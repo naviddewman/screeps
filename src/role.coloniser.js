@@ -11,11 +11,9 @@ module.exports = {
         const homeRoom = 'E43N29';
 
             if (creep.room.name == homeRoom) {
-                console.log(creep.room.name);
                 creep.moveTo(Game.flags.claimRoom);
             }
             else {
-                console.log('in else');
                 const controller = creep.room.controller;
 
                 if(creep.claimController(controller) == ERR_NOT_IN_RANGE)
