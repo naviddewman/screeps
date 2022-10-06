@@ -11,7 +11,7 @@ module.exports = {
     
     run: function(creep) {
 
-        const towers = spawn.room.find(FIND_MY_STRUCTURES, {
+        const towers = creep.room.find(FIND_MY_STRUCTURES, {
             filter: (s) => s.structureType == STRUCTURE_TOWER
         });
         
