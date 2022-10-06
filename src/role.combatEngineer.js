@@ -12,6 +12,7 @@ module.exports = {
     run: function(creep, towers) {
         
         const drainedTowers = _.filter(towers, (t) => t.store.getFreeCapacity(RESOURCE_ENERGY) > 0);
+        console.log(drainedTowers);
 
         const controller = creep.room.controller;
         const storage = Game.getObjectById('63340f12ac9df436b4f8618d');
