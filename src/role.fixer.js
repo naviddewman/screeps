@@ -4,8 +4,8 @@ module.exports = {
     
     name: 'fixer',
     parts: [
-        {type: WORK, factor: 3},
-        {type: CARRY, factor: 3},
+        {type: WORK, factor: 2},
+        {type: CARRY, factor: 2},
         {type: MOVE, factor: 3},
     ],
     
