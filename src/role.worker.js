@@ -11,6 +11,7 @@ module.exports = {
 
     run: function(creep) {
         const sources = creep.room.find(FIND_SOURCES);
+        const controller = creep.room.controller;
         
         if (!creep.isFull() && !creep.memory.dumper) {
             if(creep.harvest(sources[1]) == ERR_NOT_IN_RANGE)
