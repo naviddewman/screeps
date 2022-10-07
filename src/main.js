@@ -18,6 +18,7 @@ const roles = {
     scavenger: require('role.scavenger'),
     handler: require('role.handler'),
     worker: require('role.worker'),
+    miniHauler: require('role.miniHauler'),
 }
 
 module.exports.loop = function() {
