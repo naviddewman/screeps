@@ -25,6 +25,10 @@ StructureSpawn.prototype.doSpawning =
             }
         }
 
+        if (population['miniHauler'] < this.memory.miniHaulers) {
+            this.spawnNonTargetedCreep(roles['miniHauler']);
+        }
+        
         if (population['worker'] < this.memory.workers) {
             this.spawnNonTargetedCreep(roles['worker']);
         }
