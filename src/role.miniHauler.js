@@ -5,7 +5,7 @@ module.exports = {
     parts: [
         {type: WORK, factor: 2},
         {type: CARRY, factor: 1},
-        {type: MOVE, factor: 2},
+        {type: MOVE, factor: 1},
     ],
 
     run: function(creep) {
