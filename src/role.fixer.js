@@ -5,8 +5,8 @@ module.exports = {
     name: 'fixer',
     parts: [
         {type: WORK, factor: 2},
-        {type: CARRY, factor: 2},
-        {type: MOVE, factor: 3},
+        {type: CARRY, factor: 1},
+        {type: MOVE, factor: 1},
     ],
     
     
@@ -22,7 +22,8 @@ module.exports = {
         const storage = Game.getObjectById('63340f12ac9df436b4f8618d');
 
         if (!creep.isFull() && !creep.memory.dumper) {
-            creep.energize(storage);
+            if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE)
+                creep.moveTo(sources[0]);
         }
         else if (creep.isFull())
             creep.memory.dumper = true;
