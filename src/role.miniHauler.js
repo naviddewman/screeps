@@ -38,5 +38,8 @@ module.exports = {
                     creep.moveTo(extenders[object]);
             }
         }
+
+        if(creep.isEmpty())
+            creep.memory.dumper = false;
     }
 };
