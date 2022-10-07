@@ -17,6 +17,7 @@ const roles = {
     combatEngineer: require('role.combatEngineer'),
     scavenger: require('role.scavenger'),
     handler: require('role.handler'),
+    worker: require('role.worker'),
 }
 
 module.exports.loop = function() {
