@@ -17,7 +17,8 @@ module.exports = {
         if (!creep.isFull() && !creep.memory.dumper)
             creep.goHarvest(creep);
         
-        creep.memory.dumper = creep.isFull();
+        else if (creep.isFull())
+            creep.memory.dumper = true;
 
         if (creep.memory.dumper && targets.length > 0) {
             let target = creep.pos.findClosestByPath(targets);
@@ -30,5 +31,8 @@ module.exports = {
             if (creep.upgradeController(controller) == ERR_NOT_IN_RANGE)
                 creep.moveTo(controller);
         }
+
+        if (creep.isEmpty())
+            creep.memory.dumper = false;
     }
 }
