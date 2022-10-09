@@ -24,6 +24,11 @@ const roles = {
 
 module.exports.loop = function() {
     
+    for(var name in Memory.creeps) {
+        if(!Game.creeps[name]) {
+            delete Memory.creeps[name];
+        }
+    }
     
     for (let spawn in Game.spawns) {
         Game.spawns[spawn].doSpawning(roles);
