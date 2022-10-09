@@ -26,7 +26,7 @@ module.exports = {
                 creep.moveTo(target);
             }
         }
-        else {
+        else if (targets.length < 1) {
             if (creep.upgradeController(controller) == ERR_NOT_IN_RANGE)
                 creep.moveTo(controller);
         }

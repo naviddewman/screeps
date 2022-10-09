@@ -1,5 +1,5 @@
 Creep.prototype.goHarvest = 
-    function() {
+    function(creep) {
         const sources = creep.room.find(FIND_SOURCES);
 
         if(creep.harvest(sources[1]) == ERR_NOT_IN_RANGE)
