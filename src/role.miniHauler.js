@@ -9,6 +9,7 @@ module.exports = {
     ],
 
     run: function(creep) {
+        const controller = creep.room.controller;
         const sources = creep.room.find(FIND_SOURCES);
         const spawn = Game.spawns['Spawn2'];
         const extenders = creep.room.find(FIND_MY_STRUCTURES, {
@@ -37,6 +38,11 @@ module.exports = {
                 if (creep.transfer(extenders[object], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE)
                     creep.moveTo(extenders[object]);
             }
+        }
+
+        if (creep.memory.dumper && !extenders.length && spawn.store.getFreeCapacity(RESOURCE_ENERGY) == 0) {
+            if (creep.upgradeController(controller) == ERR_NOT_IN_RANGE)
+                creep.moveTo(controller);
         }
 
         if(creep.isEmpty())
