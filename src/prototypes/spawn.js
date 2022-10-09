@@ -48,8 +48,12 @@ StructureSpawn.prototype.doSpawning =
         if (population['trucker'] < this.memory.truckers) {
             this.spawnNonTargetedCreep(roles['trucker']);
         }
+
+        if (population['apprentice'] < this.memory.apprentices) {
+            this.spawnNonTargetedCreep(roles['apprentice']);
+        }
     
-        if (globalBuilders.length < this.memory.builders) {
+        if (population['builders'] < this.memory.builders) {
             this.spawnNonTargetedCreep(roles['builder']);
         }
     

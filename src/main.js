@@ -19,6 +19,7 @@ const roles = {
     handler: require('role.handler'),
     worker: require('role.worker'),
     miniHauler: require('role.miniHauler'),
+    apprenctice: require('role.apprentice'),
 }
 
 module.exports.loop = function() {
