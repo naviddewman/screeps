@@ -15,7 +15,7 @@ module.exports = {
         const targets = creep.room.find(FIND_CONSTRUCTION_SITES);
         
         if (!creep.isFull() && !creep.memory.dumper)
-            creep.goHarvest();
+            creep.goHarvest(creep);
         
         creep.memory.dumper = creep.isFull();
 
