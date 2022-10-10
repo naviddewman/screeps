@@ -11,6 +11,7 @@ module.exports = {
     run: function(creep) {
         const controller = creep.room.controller;
         const sources = creep.room.find(FIND_SOURCES);
+        const container = Game.getObjectById('63440446c677e3d2a7f324b9');
         const spawn = Game.spawns['Spawn2'];
         const extenders = creep.room.find(FIND_MY_STRUCTURES, {
             filter: (structure) => {
@@ -20,8 +21,7 @@ module.exports = {
         });
 
         if (!creep.isFull() && !creep.memory.dumper) {
-            if (creep.harvest(sources[1]) == ERR_NOT_IN_RANGE)
-                creep.moveTo(sources[1]);
+            creep.energize(container);
         }
         
         else if (creep.isFull())
