@@ -19,10 +19,10 @@ module.exports = {
             filter: (s) => (s.structureType == STRUCTURE_CONTAINER || s.structureType == STRUCTURE_ROAD) &&
             s.hits < s.hitsMax
         });
+        const container = Game.getObjectById('6344287f0eda7399b760688d');
 
         if (!creep.isFull() && !creep.memory.dumper) {
-            if(creep.harvest(sources[0]) == ERR_NOT_IN_RANGE)
-                creep.moveTo(sources[0]);
+            creep.energize(container);
         }
         else if (creep.isFull())
             creep.memory.dumper = true;
