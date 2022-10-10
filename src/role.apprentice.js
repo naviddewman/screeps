@@ -13,9 +13,10 @@ module.exports = {
         
         const controller = creep.room.controller;
         const targets = creep.room.find(FIND_CONSTRUCTION_SITES);
+        const container = Game.getObjectById('63440446c677e3d2a7f324b9');
         
         if (!creep.isFull() && !creep.memory.dumper)
-            creep.goHarvest(creep);
+            creep.energize(container);
         
         else if (creep.isFull())
             creep.memory.dumper = true;
