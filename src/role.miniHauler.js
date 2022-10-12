@@ -21,7 +21,7 @@ module.exports = {
         });
 
         if (!creep.isFull() && !creep.memory.dumper) {
-            creep.energize(container);
+            creep.harvest(sources[1]);
         }
         
         else if (creep.isFull())
