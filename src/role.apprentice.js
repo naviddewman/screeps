@@ -11,6 +11,7 @@ module.exports = {
 
     run: function(creep) {
         
+        const sources = creep.room.find(FIND_SOURCES);
         const controller = creep.room.controller;
         const targets = creep.room.find(FIND_CONSTRUCTION_SITES);
         const container = Game.getObjectById('63440446c677e3d2a7f324b9');
