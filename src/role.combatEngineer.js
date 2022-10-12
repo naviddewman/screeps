@@ -1,3 +1,5 @@
+require('prototypes.creep.energize');
+require('prototypes.creep.utils');
 
 module.exports = {
 
