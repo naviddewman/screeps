@@ -15,7 +15,8 @@ module.exports = {
         const container = Game.getObjectById('6344287f0eda7399b760688d');
         
         if (!creep.isFull() && !creep.memory.dumper) {
-            creep.harvest(sources[0]);
+            if (creep.harvst(sources[0]) == ERR_NOT_IN_RANGE)
+                creep.moveTo(sources[0]);
         }
         else if(creep.isFull())
             creep.memory.dumper = true;
